@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Nutrilife.DataAccessLayer.Data;
 
@@ -11,9 +12,11 @@ using Nutrilife.DataAccessLayer.Data;
 namespace Nutrilife.DataAccessLayer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260402193944_workingtime")]
+    partial class workingtime
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -295,20 +298,19 @@ namespace Nutrilife.DataAccessLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("NutritionistId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("nutritionistId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
 
                     b.Property<decimal>("price")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("nutritionistId");
+                    b.HasIndex("NutritionistId");
 
                     b.ToTable("NutritionistPlans");
                 });
@@ -498,11 +500,11 @@ namespace Nutrilife.DataAccessLayer.Migrations
 
             modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.NutritionistPlans", b =>
                 {
-                    b.HasOne("Nutrilife.DataAccessLayer.Models.Nutritionist", null)
+                    b.HasOne("Nutrilife.DataAccessLayer.Models.Nutritionist", "Nutritionist")
                         .WithMany("plans")
-                        .HasForeignKey("nutritionistId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("NutritionistId");
+
+                    b.Navigation("Nutritionist");
                 });
 
             modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.NutriworkingTime", b =>

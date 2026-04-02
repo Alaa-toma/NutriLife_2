@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Nutrilife.DataAccessLayer.Data;
 
@@ -11,9 +12,11 @@ using Nutrilife.DataAccessLayer.Data;
 namespace Nutrilife.DataAccessLayer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260402214302_edit3")]
+    partial class edit3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -498,11 +501,13 @@ namespace Nutrilife.DataAccessLayer.Migrations
 
             modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.NutritionistPlans", b =>
                 {
-                    b.HasOne("Nutrilife.DataAccessLayer.Models.Nutritionist", null)
+                    b.HasOne("Nutrilife.DataAccessLayer.Models.Nutritionist", "Nutritionist")
                         .WithMany("plans")
                         .HasForeignKey("nutritionistId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Nutritionist");
                 });
 
             modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.NutriworkingTime", b =>

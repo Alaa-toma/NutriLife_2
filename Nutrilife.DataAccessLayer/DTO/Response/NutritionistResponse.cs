@@ -18,9 +18,8 @@ namespace Nutrilife.DataAccessLayer.DTO.Response
         public string Bio { get; set; }
         public string? Location { get; set; }
         public List<string> Languages { get; set; }
-        public string WorkingTime { get; set; }
+        public string OppeningTime { get; set; }
         public List<string?> Certifications { get; set; }
         public List<string?> ExpertIn { get; set; }
-        public List<NutritionistPlans> plans { get; set; }
     }
 }

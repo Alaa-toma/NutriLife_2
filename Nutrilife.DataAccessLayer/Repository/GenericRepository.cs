@@ -65,5 +65,13 @@ namespace Nutrilife.DataAccessLayer.Repository
             return affected > 0;
             
         }
+
+        public async Task<T> UpdateAsync (T entity)
+        {
+            _context.Update(entity);
+            await _context.SaveChangesAsync();
+            return entity;
+
+        }
     }
 }

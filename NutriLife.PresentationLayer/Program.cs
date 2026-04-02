@@ -62,6 +62,9 @@ namespace NutriLife.PresentationLayer
             builder.Services.AddScoped<ISubscriptionRepository, SubscriptionRepository>();
 
             builder.Services.AddScoped<INutritionistRepository, NutritionistRepository>();
+            builder.Services.AddScoped<INutritionistPlansRepository, NutritionistPlansRepository>();
+            builder.Services.AddScoped<INutritionistService, NutritionistService>();
+
 
             builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 

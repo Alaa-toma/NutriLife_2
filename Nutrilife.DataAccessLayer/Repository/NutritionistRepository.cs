@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Nutrilife.DataAccessLayer.Data;
+using Nutrilife.DataAccessLayer.Migrations;
 using Nutrilife.DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
@@ -32,5 +33,6 @@ namespace Nutrilife.DataAccessLayer.Repository
                 .OfType<Nutritionist>()
                 .ToListAsync();
         }
+
     }
 }

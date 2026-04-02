@@ -20,6 +20,8 @@ namespace Nutrilife.DataAccessLayer.Data
         public DbSet<Nutritionist> Nutritionists { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<NutritionistPlans> NutritionistPlans { get; set; }
+
 
 
 
@@ -49,7 +51,10 @@ namespace Nutrilife.DataAccessLayer.Data
 
             // Appointment is only visible if its Subscription's Client and Nutritionist are not deleted
             builder.Entity<Appointment>()
-                .HasQueryFilter(a => !a.Subscription.Client.IsDeleted && !a.Subscription.Nutritionist.IsDeleted);
+               .HasQueryFilter(a => !a.Subscription.Client.IsDeleted && !a.Subscription.Nutritionist.IsDeleted);
+
+           // builder.Entity<NutritionistPlans>()
+           //      .HasQueryFilter(p => !p.Nutritionist.IsDeleted);
 
 
 
@@ -58,10 +63,6 @@ namespace Nutrilife.DataAccessLayer.Data
             // Fix decimal precision warnings
             builder.Entity<NutritionistPlans>()
                 .Property(n => n.price)
-                .HasColumnType("decimal(18,2)");
-
-            builder.Entity<Subscription>()
-                .Property(s => s.Price)
                 .HasColumnType("decimal(18,2)");
 
 

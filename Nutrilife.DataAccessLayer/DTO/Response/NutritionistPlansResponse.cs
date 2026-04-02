@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nutrilife.DataAccessLayer.Models
+namespace Nutrilife.DataAccessLayer.DTO.Response
 {
-    public class NutritionistPlans
+    public class NutritionistPlansResponse
     {
-        public int Id { get; set; }
+        public int Id {  get; set; }
         public string Title { get; set; }
         public decimal price { get; set; }
         public List<string> Description { get; set; }
