@@ -58,8 +58,22 @@ namespace Nutrilife.LogicLayer.Service
             var EmailUrl = $"{_httpContextAccessor.HttpContext.Request.Scheme}://{_httpContextAccessor.HttpContext.Request.Host}/api/Account/ConfirmEmail?token={token}&userid={user.Id}";
             // للتاكد انه الي دخل على الصفحة وصلته رسالة عالايميل, مش حدت عشوائي استخدم الرابط
 
-            await _EmailSender.SendEmailAsync(user.Email, "welcom", $"<h1> welcom {request.UserName} </h1>"+"  "
-                + $"<a href='{EmailUrl}'> confirm </a> " );
+            await _EmailSender.SendEmailAsync(user.Email, "welcom",
+                " <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:600px;margin:auto;background:#ffffff;" +
+                "font-family:Arial,sans-serif;border-radius:8px;overflow:hidden;\">\n  \n  <tr>\n   " +
+                " <td style=\"background:#4CAF50;color:#ffffff;text-align:center;padding:20px;font-size:22px;font-weight:bold;\">\n   " +
+                "   {{NutriLife}}\n    </td>\n  </tr>\n\n  <tr>\n   " +
+                " <td style=\"padding:30px;color:#333;font-size:16px;line-height:1.6;\">\n    " +
+                $"  \n      <p>Hi {user.FullName},</p>\n\n      <p>Thanks for registering! Please confirm your email" +
+                " address to activate your account.</p>\n\n   " +
+                $"   <div style=\"text-align:center;margin:30px 0;\">\n        <a href=\"{EmailUrl}\" \n   " +
+                "        style=\"background:#4CAF50;color:#ffffff;text-decoration:none;padding:12px 24px;" +
+                "border-radius:5px;display:inline-block;font-size:16px;\">\n    " +
+                "      Confirm Account\n        </a>\n      </div>\n\n      <p>If you didn’t create this account," +
+                " you can ignore this message.</p>\n\n      <p>— The {{Website Name}} Team</p>\n\n    </td>\n  </tr>\n\n  <tr>\n " +
+                "   <td style=\"background:#f4f4f4;text-align:center;padding:15px;font-size:12px;color:#777;\">\n   " +
+                "   © {{2026}} {{NutriLife}}\n    </td>\n  </tr>\n\n</table> "
+                );
 
             return new RegisterResponse() { Success = true, Message = "Success" };
 
@@ -84,8 +98,22 @@ namespace Nutrilife.LogicLayer.Service
             var EmailUrl = $"{_httpContextAccessor.HttpContext.Request.Scheme}://{_httpContextAccessor.HttpContext.Request.Host}/api/Account/ConfirmEmail?token={token}&userid={user.Id}";
             // للتاكد انه الي دخل على الصفحة وصلته رسالة عالايميل, مش حدت عشوائي استخدم الرابط
 
-            await _EmailSender.SendEmailAsync(user.Email, "welcom", $"<h1> welcom {request.UserName} </h1>" + "  "
-                + $"<a href='{EmailUrl}'> confirm </a> ");
+            await _EmailSender.SendEmailAsync(user.Email, "welcom",
+               " <table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:600px;margin:auto;background:#ffffff;" +
+               "font-family:Arial,sans-serif;border-radius:8px;overflow:hidden;\">\n  \n  <tr>\n   " +
+               " <td style=\"background:#4CAF50;color:#ffffff;text-align:center;padding:20px;font-size:22px;font-weight:bold;\">\n   " +
+               "   {{NutriLife}}\n    </td>\n  </tr>\n\n  <tr>\n   " +
+               " <td style=\"padding:30px;color:#333;font-size:16px;line-height:1.6;\">\n    " +
+               $"  \n      <p>Hi {user.FullName},</p>\n\n      <p>Thanks for registering! Please confirm your email" +
+               " address to activate your account.</p>\n\n   " +
+               $"   <div style=\"text-align:center;margin:30px 0;\">\n        <a href=\"{EmailUrl}\" \n   " +
+               "        style=\"background:#4CAF50;color:#ffffff;text-decoration:none;padding:12px 24px;" +
+               "border-radius:5px;display:inline-block;font-size:16px;\">\n    " +
+               "      Confirm Account\n        </a>\n      </div>\n\n      <p>If you didn’t create this account," +
+               " you can ignore this message.</p>\n\n      <p>— The {{Website Name}} Team</p>\n\n    </td>\n  </tr>\n\n  <tr>\n " +
+               "   <td style=\"background:#f4f4f4;text-align:center;padding:15px;font-size:12px;color:#777;\">\n   " +
+               "   © {{2026}} {{NutriLife}}\n    </td>\n  </tr>\n\n</table> "
+               );
 
             return new RegisterResponse() { Success = true, Message = "Success" };
 

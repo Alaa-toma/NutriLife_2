@@ -56,8 +56,8 @@ namespace Nutrilife.DataAccessLayer.Data
             // *********   subscription **************
 
             // Fix decimal precision warnings
-            builder.Entity<Nutritionist>()
-                .Property(n => n.ConsultationFee)
+            builder.Entity<NutritionistPlans>()
+                .Property(n => n.price)
                 .HasColumnType("decimal(18,2)");
 
             builder.Entity<Subscription>()

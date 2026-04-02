@@ -11,7 +11,7 @@ namespace Nutrilife.DataAccessLayer.DTO.Request
         public string NutritionistId { get; set; }
         public DateOnly StartDate { get; set; }
         public DateOnly EndDate { get; set; }
-        public decimal Price { get; set; }
+        public int UserPlan { get; set; }
         public string? Notes { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Nutrilife.DataAccessLayer.Data;
 
@@ -11,9 +12,11 @@ using Nutrilife.DataAccessLayer.Data;
 namespace Nutrilife.DataAccessLayer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260402170017_nutriiplans")]
+    partial class nutriiplans
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -346,11 +349,16 @@ namespace Nutrilife.DataAccessLayer.Migrations
                     b.Property<int>("UserPlan")
                         .HasColumnType("int");
 
+                    b.Property<int>("userPlaneId")
+                        .HasColumnType("int");
+
                     b.HasKey("SubscriptionId");
 
                     b.HasIndex("ClientId");
 
                     b.HasIndex("NutritionistId");
+
+                    b.HasIndex("userPlaneId");
 
                     b.ToTable("Subscriptions");
                 });
@@ -494,9 +502,17 @@ namespace Nutrilife.DataAccessLayer.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("Nutrilife.DataAccessLayer.Models.NutritionistPlans", "userPlane")
+                        .WithMany()
+                        .HasForeignKey("userPlaneId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Client");
 
                     b.Navigation("Nutritionist");
+
+                    b.Navigation("userPlane");
                 });
 
             modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.Subscription", b =>
