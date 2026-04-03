@@ -65,7 +65,7 @@ namespace Nutrilife.LogicLayer.Service
             return new MessageResponse() { success = true, message = "deleted successfully" };  
         }
 
-        public async Task<List<NutritionistPlans>> MyPlans(string NutriId)
+        public async Task<List<NutritionistPlansResponse>> MyPlans(string NutriId)
         {
             var exist = await _nutritionistRepository.GetByIdAsync(NutriId);
             if (exist == null)
@@ -73,9 +73,19 @@ namespace Nutrilife.LogicLayer.Service
                 throw new Exception(message: "Nutritionist Not Found");
             }
 
-            return await _nutriPlanRepository.GetAllAsync();
+            var plans = await _nutriPlanRepository.MyPlans(NutriId);
+            return plans.Adapt<List<NutritionistPlansResponse>>();
         }
 
+        public async Task<NutritionistPlansResponse> getOne(int planID)
+        {
+            var plan = await _nutriPlanRepository.GetByIdAsync(planID);
+            if (plan == null)
+            {
+                throw new Exception(message: "Plan Not Found");
+            }
+            return plan.Adapt<NutritionistPlansResponse>();
+        }
 
     }
 }

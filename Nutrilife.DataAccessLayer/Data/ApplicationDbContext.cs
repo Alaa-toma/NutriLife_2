@@ -24,7 +24,6 @@ namespace Nutrilife.DataAccessLayer.Data
 
 
 
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options,
             IHttpContextAccessor httpContextAccessror)
        : base(options)
@@ -85,6 +84,7 @@ namespace Nutrilife.DataAccessLayer.Data
               .HasOne(a => a.Subscription)
               .WithMany(s => s.Appointments)
               .HasForeignKey(a => a.SubscriptioId)
+              .IsRequired(false)
               .OnDelete(DeleteBehavior.Cascade);
         }
 

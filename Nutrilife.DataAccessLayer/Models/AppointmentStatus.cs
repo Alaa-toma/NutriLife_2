@@ -8,9 +8,9 @@ namespace Nutrilife.DataAccessLayer.Models
 {
     public enum AppointmentStatus
     {
+        Available,
         Pending,
         Confirmed,
-        Cancelled,
         Completed
     }
 }

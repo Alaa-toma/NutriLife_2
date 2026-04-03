@@ -12,7 +12,7 @@ namespace Nutrilife.DataAccessLayer.Repository
     {
         Task<List<Appointment>> GetClientAppointments(string ClientrId);
         Task<List<Appointment>> GetNutritionistAppointments(string NutritionistId);
-        Task<bool> ISConflict(Subscription subscription, String UserId, DateTime AppointmentDate);
+        Task<bool> ISConflict(String UserId, DateOnly date, TimeOnly time);
         Task<Appointment?> GetByIdAsync(int AppointmentId);
         Task<Appointment> UpdateAsync(Appointment appointment);
 

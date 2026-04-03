@@ -15,8 +15,8 @@ namespace Nutrilife.LogicLayer.Service
         Task<NutritionistPlansResponse> CreatPlanAsync(NutritionistPlansRequest request);
         Task<NutritionistPlansResponse> UpdatePlanAsync(int id, NutritionistPlansRequest request);
         Task<MessageResponse> DeletePlanAsync(int id);
-        Task<List<NutritionistPlans>> MyPlans(string NutriId);
-
+         Task<List<NutritionistPlansResponse>> MyPlans(string NutriId);
+        Task<NutritionistPlansResponse> getOne(int planID);
 
     }
 }

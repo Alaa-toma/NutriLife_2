@@ -15,6 +15,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Nutrilife.LogicLayer.Service
 {
@@ -26,11 +27,13 @@ namespace Nutrilife.LogicLayer.Service
         private readonly IEmailSender _emailSender;
         private readonly UserManager<ApplicationUser>  _UserManager;
         private readonly IMeetingLinkCreation _meetingLinkCreation;
+        private readonly INutritionistRepository _NutritionistRepository;
 
         public AppointmentService(IAppointmentRepository appointmentRepository,
             ISubscriptionRepository subscriptionRepository, IHttpContextAccessor httpContextAccessor, 
             IEmailSender emailSender, UserManager<ApplicationUser> UserManager, 
-            IMeetingLinkCreation meetingLinkCreation)
+            IMeetingLinkCreation meetingLinkCreation,
+            INutritionistRepository NutritionistRepository)
         {
             _appointmentRepository = appointmentRepository;
             _httpContextAccessor = httpContextAccessor;
@@ -38,45 +41,39 @@ namespace Nutrilife.LogicLayer.Service
             _emailSender = emailSender;
             _UserManager = UserManager;
             _meetingLinkCreation = meetingLinkCreation;
+            _NutritionistRepository = NutritionistRepository;
         }
 
 
-        public async Task<AppointmentResponse> CreateAppointmentAsync(AppointmentRequest request)
+        public async Task<AppointmentResponse> CreateAppointmentAsync(CreateAppointmentRequest request)
         {
-            var subscription = await _SubscriptionRepository.GetByIdAsync(request.SubscriptioId);
+            var today = DateOnly.FromDateTime(DateTime.UtcNow);
+            var nowTime = TimeOnly.FromDateTime(DateTime.UtcNow);
 
-            if (subscription == null)
+
+            if ( request.date < today || (request.date == today && request.Time < nowTime)  )
             {
                 return new AppointmentResponse()
                 {
                     Confirmd = false,
-                    message = "You need to subscribe with the Nutritionist before booking an appointment."
+                    message = "You try to add Appointment in The Past! Check Your Appointment date"
                 };
-            } // client has subscription
-            if (request.appointment_date <= DateTime.UtcNow)
-            {
-                return new AppointmentResponse()
-                {
-                    Confirmd = false,
-                    message = "You book Appointment in The Past! Check Your Appointment Time"
-                };
-            } // time not in the past
+            }
 
-            var UserId = GetCurrentUserId();
-            var hasConflict = await _appointmentRepository.ISConflict(subscription, UserId, request.appointment_date);
+            var UserId = GetCurrentUserId(); // nutri Id 
+            var hasConflict = await _appointmentRepository.ISConflict(UserId, request.date, request.Time);
             if (hasConflict)
             {
                 return new AppointmentResponse()
                 {
                     Confirmd = false,
-                    message = "Conflict Appointment! you Already sent an appointment request for this day.."
+                    message = "Conflict Appointment! you Already an appointment for this tome.."
                 };
             }
 
             // adapt to appointment object
             var appointment = request.Adapt<Appointment>();
-            appointment.Subscription = subscription;
-            appointment.status = AppointmentStatus.Pending;
+            appointment.Status = AppointmentStatus.Available;
 
             // create and save changes
             var created = await _appointmentRepository.CreateAsync(appointment);
@@ -85,10 +82,53 @@ namespace Nutrilife.LogicLayer.Service
             return new AppointmentResponse()
             {
                 Confirmd = true,
-                message = "Your Appointment Request Send Successfully..",
+                message = "Your Appointment created Successfully..",
                 AppointmentId = created.Id
             };
 
+        }
+
+        public async Task<AppointmentResponse> reserveAppointment(AppointmentRequest request)
+        {
+            var subscription = await _SubscriptionRepository.GetByIdAsync(request.SubscriptioId);
+            if (subscription == null)
+            {
+                return new AppointmentResponse()
+                {
+                    Confirmd = false,
+                    message = "You need to subscribe with the Nutritionist before booking an appointment."
+                };
+            }// client has subscription
+
+            var appointment = await _appointmentRepository.GetByIdAsync(request.Id);
+            if(appointment == null)
+            {
+                return new AppointmentResponse()
+                {
+                    Confirmd = false,
+                    message = "appointment Not Found!"
+                };
+            }
+
+            if (appointment.Status != AppointmentStatus.Available)
+            {
+                return new AppointmentResponse()
+                {
+                    Confirmd = false,
+                    message = "appointment Not Available!"
+                };
+            }
+
+            appointment.SubscriptioId = request.SubscriptioId;
+            appointment.type = request.type;
+            appointment.Status = AppointmentStatus.Pending;
+            await _appointmentRepository.UpdateAsync(appointment);
+            return new AppointmentResponse()
+            {
+                Confirmd = true,
+                message = "Appointment Request Sent Successfully..", 
+                AppointmentId = appointment.Id
+            };
         }
 
         public async Task<List<Appointment>> GetClientAppointmentsAsync(string ClientId)
@@ -132,7 +172,7 @@ namespace Nutrilife.LogicLayer.Service
             if (hasSubscription.NutritionistId != GetCurrentUserId())
                 throw new UnauthorizedAccessException("You cannot reject this subscription");
 
-            if (appointment.status != AppointmentStatus.Pending)
+            if (appointment.Status != AppointmentStatus.Pending)
             {
                 return new AppointmentResponse()
                 {
@@ -141,7 +181,7 @@ namespace Nutrilife.LogicLayer.Service
                 };
             }
 
-            appointment.status = AppointmentStatus.Cancelled;
+            appointment.Status = AppointmentStatus.Available;
             var updated = await _appointmentRepository.UpdateAsync(appointment);
 
             return new AppointmentResponse()
@@ -175,9 +215,9 @@ namespace Nutrilife.LogicLayer.Service
             }
 
             if (hasSubscription.NutritionistId != GetCurrentUserId())
-                throw new UnauthorizedAccessException("You cannot Approve this subscription");
+                throw new UnauthorizedAccessException("You cannot Approve this Appointment");
 
-            if (appointment.status != AppointmentStatus.Pending)
+            if (appointment.Status != AppointmentStatus.Pending)
             {
                 return new AppointmentResponse()
                 {
@@ -186,7 +226,7 @@ namespace Nutrilife.LogicLayer.Service
                 };
             }
 
-            appointment.status = AppointmentStatus.Confirmed;
+            appointment.Status = AppointmentStatus.Confirmed;
 
 
             var client = await _UserManager.FindByIdAsync(hasSubscription.ClientId);
@@ -196,8 +236,8 @@ namespace Nutrilife.LogicLayer.Service
             {
                  meetLink = await _meetingLinkCreation.CreateMeetingLinkAsync(
                title: $"Nutrition Consultation - {client.UserName}",
-               start: appointment.appointment_date,
-               end: appointment.appointment_date.AddMinutes(45)
+               start: appointment.date.ToDateTime(appointment.Time),
+               end: appointment.date.ToDateTime(appointment.Time).AddMinutes(45)
            );
 
                 await _emailSender.SendEmailAsync(
@@ -206,8 +246,8 @@ namespace Nutrilife.LogicLayer.Service
                     $@"
                 <h2>Hello {client.UserName},</h2>
                 <p>Your nutrition consultation has been scheduled.</p>
-                <p><strong>Date:</strong> day-{appointment.appointment_date.Day} : month-{appointment.appointment_date.Month}  year-{appointment.appointment_date.Year} </p>
-                <p><strong>Time:</strong> {appointment.appointment_date.TimeOfDay} </p>
+                <p><strong>Date:</strong> day-{appointment.date.Day} : month-{appointment.date.Month}  year-{appointment.date.Year} </p>
+                <p><strong>Time:</strong> {appointment.Time} </p>
                 <br/>
                 <a href='{meetLink}'
                    style='background:#1a73e8; color:white; padding:12px 24px;
@@ -221,17 +261,17 @@ namespace Nutrilife.LogicLayer.Service
             }
             else
             {
-                var nutri = await _UserManager.FindByIdAsync(hasSubscription.NutritionistId);
+                var nutri = await _NutritionistRepository.GetByIdAsync(hasSubscription.NutritionistId);
                 await _emailSender.SendEmailAsync(
                     client.Email!,
                     "Your Appointment is Scheduled 📅",
                     $@"
                 <h2>Hello {client.UserName},</h2>
                 <p>Your nutrition consultation has been scheduled.</p>
-                <p><strong>Date:</strong> day-{appointment.appointment_date.Day} : month-{appointment.appointment_date.Month}  year-{appointment.appointment_date.Year} </p>
-                <p><strong>Time:</strong> {appointment.appointment_date.TimeOfDay} </p>
+                <p><strong>Date:</strong> day-{appointment.date.Day} : month-{appointment.date.Month}  year-{appointment.date.Year} </p>
+                <p><strong>Time:</strong> {appointment.Time} </p>
                 <br/>
-                 <p><strong>Location:</strong> In {nutri.FullName} clinic  </p>
+                 <p><strong>Location:</strong> In {nutri.Location} clinic  </p>
                 "
                 );
             }

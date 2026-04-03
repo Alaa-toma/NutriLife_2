@@ -11,7 +11,8 @@ namespace Nutrilife.LogicLayer.Service
 {
     public interface IAppointmentService
     {
-        Task<AppointmentResponse> CreateAppointmentAsync(AppointmentRequest request);
+        Task<AppointmentResponse> CreateAppointmentAsync(CreateAppointmentRequest request);
+         Task<AppointmentResponse> reserveAppointment(AppointmentRequest request);
         Task<List<Appointment>> GetClientAppointmentsAsync(string ClientId);
         Task<List<Appointment>> GetNutritionistAppointmentsAsync(string NutriId);
          Task<AppointmentResponse> RejectAppointmentAsync(int appointmentId);

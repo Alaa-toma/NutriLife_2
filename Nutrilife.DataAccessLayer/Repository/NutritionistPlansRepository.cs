@@ -26,5 +26,11 @@ namespace Nutrilife.DataAccessLayer.Repository
             return await _context.NutritionistPlans.FindAsync(planId); 
         }
 
+
+        public async Task<List<NutritionistPlans>> MyPlans(string nutriId)
+        {
+            return await _context.NutritionistPlans.Where(p => p.nutritionistId == nutriId).ToListAsync();
+        }
+
     }
 }

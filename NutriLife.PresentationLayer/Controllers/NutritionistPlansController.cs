@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Nutrilife.DataAccessLayer.DTO.Request;
+using Nutrilife.DataAccessLayer.Migrations;
 using Nutrilife.DataAccessLayer.Models;
 using Nutrilife.LogicLayer.Service;
 
@@ -22,10 +23,21 @@ namespace NutriLife.PresentationLayer.Controllers
 
 
         [HttpGet("MyPlans/{NutriId}")]
-        public async Task<IActionResult> GetAllPlans(string NutriId)
+        public async Task<IActionResult> GetMyPlans(string NutriId)
         {
             var result = await _nutritionistService.MyPlans(NutriId);
             if(result == null)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
+        }
+
+        [HttpGet("getPlan/{PlanId}")]
+        public async Task<IActionResult> GetOne(int PlanId)
+        {
+            var result = await _nutritionistService.getOne(PlanId);
+            if (result == null)
             {
                 return BadRequest(result);
             }

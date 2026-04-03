@@ -17,7 +17,6 @@ namespace Nutrilife.DataAccessLayer.Models
         public List<string?> Certifications { get; set; }
         public List<string?> ExpertIn { get; set; }
         public List<NutritionistPlans?> plans { get; set; }
-        public List<NutriworkingTime?> WorkingTime { get; set; }
         public ICollection<Subscription> Subscriptions { get; set; }
     }
 }

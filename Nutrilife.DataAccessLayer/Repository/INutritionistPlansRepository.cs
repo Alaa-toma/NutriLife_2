@@ -10,5 +10,6 @@ namespace Nutrilife.DataAccessLayer.Repository
     public interface INutritionistPlansRepository :IGenericRepository<NutritionistPlans>
     {
     Task<NutritionistPlans> GetByIdAsync(int PlanId);
+        Task<List<NutritionistPlans>> MyPlans(string nutriId);
     }
 }

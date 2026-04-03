@@ -20,15 +20,25 @@ namespace NutriLife.PresentationLayer.Controllers
             _appointmentService = appointmentService;
         }
 
-        [HttpPost("AppointmentRequest")]
-        [Authorize(Roles = "Client")]
-        public async Task<IActionResult> CreatrApointmentRequest(AppointmentRequest request)
+
+        [HttpPost("CreateAppointment")]
+        [Authorize(Roles = "Nutritionist")]
+        public async Task<IActionResult> CreatrApointment(CreateAppointmentRequest request)
         {
             var result = await _appointmentService.CreateAppointmentAsync(request);
             if (result == null)
             {
                 return BadRequest(result);
             }
+            return Ok(result);
+        }
+
+        [HttpPost("ReserveAppointment")]
+        [Authorize(Roles = "Client")]
+        public async Task<IActionResult> ReserveAppointment(AppointmentRequest request)
+        {
+            var result =  await _appointmentService.reserveAppointment(request);
+            if (result == null) { return BadRequest(result); }
             return Ok(result);
         }
 

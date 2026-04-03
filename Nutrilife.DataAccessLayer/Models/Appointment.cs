@@ -9,22 +9,16 @@ namespace Nutrilife.DataAccessLayer.Models
 {
     public class Appointment 
     {
-        [Required]
         public int Id { get; set; }
-
-        [Required]
-        public int SubscriptioId { get; set; }
-        public Subscription Subscription{ get; set; }
-
-        [Required]
-        public DateTime appointment_date {  get; set; }
-
-        public AppointmentStatus status { get; set; }
-
-        [Required]
+        public int SubscriptioId { get; set; } = 16;
         public AppointmentType type { get; set; }
+        public DateOnly date { get; set; }
+        public TimeOnly Time { get; set; }
+        public AppointmentStatus Status { get; set; }
         public string? Notes { get; set; }
         public string? MeetingLink { get; set; }
 
+
+        public Subscription Subscription { get; set; }
     }
 }

@@ -28,11 +28,11 @@ namespace Nutrilife.DataAccessLayer.Repository
         {
             return await _context.Appointments.Where(a => a.Subscription.NutritionistId == NutritionistId).ToListAsync();
         }
-        public async Task<bool> ISConflict(Subscription subscription, String UserId, DateTime AppointmentDate )
+        public async Task<bool> ISConflict(String UserId,DateOnly date, TimeOnly time )
         {
-            return await _context.Appointments.AnyAsync(a => ( a.status != AppointmentStatus.Cancelled ) 
-            && (a.Subscription.ClientId == UserId)
-            && ((a.appointment_date.Date == AppointmentDate.Date) )  ); // if there an conflict return true.
+            return await _context.Appointments.AnyAsync(a =>  (a.Status != AppointmentStatus.Available) 
+            && (a.Time == time && a.date == date)
+             ); // if there an conflict return true.
         }
 
 

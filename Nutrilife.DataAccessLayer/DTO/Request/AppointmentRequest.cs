@@ -10,16 +10,9 @@ namespace Nutrilife.DataAccessLayer.DTO.Request
 {//
     public class AppointmentRequest
     {
-        
-        [Required]
-        public int SubscriptioId { get; set; }
-
-        [Required]
-        public DateTime appointment_date { get; set; }
-
-        [Required]
+       public int Id { get; set; } // appointment id
+        public int SubscriptioId { get; set; } 
         public AppointmentType type { get; set; }
-        public string? Notes { get; set; }
 
     }
 }
