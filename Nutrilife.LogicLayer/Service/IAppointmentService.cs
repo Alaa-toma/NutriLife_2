@@ -17,6 +17,6 @@ namespace Nutrilife.LogicLayer.Service
         Task<List<Appointment>> GetNutritionistAppointmentsAsync(string NutriId);
          Task<AppointmentResponse> RejectAppointmentAsync(int appointmentId);
          Task<AppointmentResponse> ApproveAppointmentAsync(int appointmentId);
-
+         Task<MessageResponse> CompleteAppointment(int appointmentId);
     }
 }

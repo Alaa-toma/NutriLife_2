@@ -9,7 +9,7 @@ namespace Nutrilife.DataAccessLayer.Repository
 {
     public interface ISubscriptionRepository : IGenericRepository<Subscription>
     {
-        Task<Subscription?> GetActiveSubscriptionAsync(string clientId, string nutritionistId);
+        Task<Subscription?> GetActiveSubscriptionAsync(string clientId);
 
         Task<Subscription?> GetByIdAsync(int subscriptionId); // return subscription
         Task<Subscription> UpdateAsync(Subscription subscription);

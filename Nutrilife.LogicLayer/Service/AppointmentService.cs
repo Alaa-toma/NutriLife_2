@@ -159,7 +159,7 @@ namespace Nutrilife.LogicLayer.Service
                 };
             }
 
-            var hasSubscription = await _SubscriptionRepository.GetByIdAsync(appointment.SubscriptioId);
+            var hasSubscription = await _SubscriptionRepository.GetByIdAsync(appointment.SubscriptioId.Value);
             if (hasSubscription == null)
             {
                 return new AppointmentResponse()
@@ -204,7 +204,7 @@ namespace Nutrilife.LogicLayer.Service
                 };
             }
 
-            var hasSubscription = await _SubscriptionRepository.GetByIdAsync(appointment.SubscriptioId);
+            var hasSubscription = await _SubscriptionRepository.GetByIdAsync(appointment.SubscriptioId.Value);
             if (hasSubscription == null)
             {
                 return new AppointmentResponse()
@@ -287,7 +287,22 @@ namespace Nutrilife.LogicLayer.Service
             };
         }
 
+        public async Task<MessageResponse> CompleteAppointment(int appointmentId)
+        {
+            var appointment = await _appointmentRepository.GetByIdAsync(appointmentId);
+            if (appointment == null)
+            {
+                return new MessageResponse() { success=false, message="Appointment Not Found." };
+            }
+            if(appointment.Status == AppointmentStatus.Completed)
+            {
+                return new MessageResponse() { success = false, message = "Already Completed!" };
+            }
 
+            appointment.Status = AppointmentStatus.Completed;
+            await _appointmentRepository.UpdateAsync(appointment);
+            return new MessageResponse() { success = true, message=" completed Successfuly.." };
+        }
 
 
     }

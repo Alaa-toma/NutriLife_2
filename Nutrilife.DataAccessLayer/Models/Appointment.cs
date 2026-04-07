@@ -10,7 +10,7 @@ namespace Nutrilife.DataAccessLayer.Models
     public class Appointment 
     {
         public int Id { get; set; }
-        public int SubscriptioId { get; set; } = 16;
+        public int? SubscriptioId { get; set; }
         public AppointmentType type { get; set; }
         public DateOnly date { get; set; }
         public TimeOnly Time { get; set; }
@@ -19,6 +19,23 @@ namespace Nutrilife.DataAccessLayer.Models
         public string? MeetingLink { get; set; }
 
 
-        public Subscription Subscription { get; set; }
+        public Subscription? Subscription { get; set; }
     }
+
+
+    public enum AppointmentStatus
+    {
+        Available,
+        Pending,
+        Confirmed,
+        Completed
+    }
+
+    public enum AppointmentType
+    {
+        online,
+        inclinic
+    }
+
+
 }

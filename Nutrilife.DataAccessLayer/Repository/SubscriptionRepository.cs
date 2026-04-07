@@ -18,11 +18,10 @@ namespace Nutrilife.DataAccessLayer.Repository
 
 
 
-        public async Task<Subscription?> GetActiveSubscriptionAsync(string clientId, string nutritionistId)
+        public async Task<Subscription?> GetActiveSubscriptionAsync(string clientId)
         {
             return await GetOne(
-         filter: s => s.ClientId == clientId &&
-                      s.NutritionistId == nutritionistId &&
+         filter: s => s.ClientId == clientId  &&
                       (s.Status == SubscriptionStatus.Pending ||
                        s.Status == SubscriptionStatus.Active)
      );

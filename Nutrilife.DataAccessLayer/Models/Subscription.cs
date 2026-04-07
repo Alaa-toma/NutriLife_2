@@ -25,4 +25,13 @@ namespace Nutrilife.DataAccessLayer.Models
         public string? Notes { get; set; }
         public ICollection<Appointment> Appointments { get; set; }
     }
+
+
+    public enum SubscriptionStatus
+    {
+        Pending,
+        Active,
+        Finished,
+        Cancelled
+    }
 }

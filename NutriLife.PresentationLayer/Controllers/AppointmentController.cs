@@ -86,5 +86,13 @@ namespace NutriLife.PresentationLayer.Controllers
             return Ok(result);
         }
 
+        [HttpPut("completed/{appointmentId}")]
+        public async Task<IActionResult> CompleteAppointment(int appointmentId)
+        {
+            var result = await _appointmentService.CompleteAppointment(appointmentId);
+            if( result == null) { return BadRequest(result); }
+            return Ok(result);
+        }
+
     }
 }

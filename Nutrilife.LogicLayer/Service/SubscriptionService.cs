@@ -46,10 +46,11 @@ namespace Nutrilife.LogicLayer.Service
 
             // Check client has no active subscription with same nutritionist
             var existing = await _SubscriptionRepository
-                .GetActiveSubscriptionAsync(GetCurrentUserId(), request.NutritionistId);
+                .GetActiveSubscriptionAsync(GetCurrentUserId());
 
             if (existing != null)
-                throw new Exception("You already have an active subscription with this nutritionist");
+                throw new Exception("You already have an active subscription or" +
+                    " Sent A subscription request befor, cancel it to make a new one");
 
             var subscription = request.Adapt<Subscription>();
             subscription.ClientId = GetCurrentUserId();
