@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nutrilife.DataAccessLayer.DTO.Request
+namespace Nutrilife.DataAccessLayer.DTO.Response
 {
-    public class SubscriptionRequest
+    public class AvailableAppointments
     {
-        public string NutritionistId { get; set; }
-        public int UserPlan { get; set; }
+        public DateOnly date { get; set; }
+        public TimeOnly Time { get; set; }
         public string? Notes { get; set; }
+
     }
 }

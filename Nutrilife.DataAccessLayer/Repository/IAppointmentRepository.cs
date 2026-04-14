@@ -15,6 +15,7 @@ namespace Nutrilife.DataAccessLayer.Repository
         Task<bool> ISConflict(String UserId, DateOnly date, TimeOnly time);
         Task<Appointment?> GetByIdAsync(int AppointmentId);
         Task<Appointment> UpdateAsync(Appointment appointment);
+        Task<List<AvailableAppointments>> AvailableAppointments(string nutriId);
 
     }
 }

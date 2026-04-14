@@ -88,6 +88,16 @@ namespace Nutrilife.LogicLayer.Service
 
         }
 
+        public async Task< List<AvailableAppointments> > GetAvailableAppointmentsAsync(int subscriptionId)
+        {
+            var subscribtion = await _SubscriptionRepository.GetByIdAsync(subscriptionId);
+            if(subscribtion == null || subscribtion.Status != SubscriptionStatus.Active)
+            {
+                throw new Exception("Subscription Not Found!");
+            }
+
+            return await _appointmentRepository.AvailableAppointments(subscribtion.NutritionistId);
+        }
         public async Task<AppointmentResponse> reserveAppointment(AppointmentRequest request)
         {
             var subscription = await _SubscriptionRepository.GetByIdAsync(request.SubscriptioId);
@@ -194,6 +204,7 @@ namespace Nutrilife.LogicLayer.Service
 
         public async Task<AppointmentResponse> ApproveAppointmentAsync(int appointmentId)
         {
+            // الموعد موجود
             var appointment = await _appointmentRepository.GetByIdAsync(appointmentId);
             if (appointment == null)
             {
@@ -203,7 +214,7 @@ namespace Nutrilife.LogicLayer.Service
                     message = "Appointment Not Found!"
                 };
             }
-
+            // المراجع مشترك
             var hasSubscription = await _SubscriptionRepository.GetByIdAsync(appointment.SubscriptioId.Value);
             if (hasSubscription == null)
             {
@@ -213,10 +224,10 @@ namespace Nutrilife.LogicLayer.Service
                     message = " You Should Make a Subscription First!"
                 };
             }
-
+            // الاشتراك الموجود كع هذا الاخصائي
             if (hasSubscription.NutritionistId != GetCurrentUserId())
                 throw new UnauthorizedAccessException("You cannot Approve this Appointment");
-
+            //تم ارسال طلب حجز الموعد
             if (appointment.Status != AppointmentStatus.Pending)
             {
                 return new AppointmentResponse()
@@ -225,10 +236,10 @@ namespace Nutrilife.LogicLayer.Service
                     message = "Only pending Appointments can be rejected"
                 };
             }
-
+            // قبول
             appointment.Status = AppointmentStatus.Confirmed;
 
-
+            // ارسال ايميل تاكيد
             var client = await _UserManager.FindByIdAsync(hasSubscription.ClientId);
 
             string meetLink = "";
@@ -275,9 +286,9 @@ namespace Nutrilife.LogicLayer.Service
                 "
                 );
             }
-
-                var updated = await _appointmentRepository.UpdateAsync(appointment);
-
+            // تعديل 
+             var updated = await _appointmentRepository.UpdateAsync(appointment);
+            // الرد
             return new AppointmentResponse()
             {
                 Confirmd = true,

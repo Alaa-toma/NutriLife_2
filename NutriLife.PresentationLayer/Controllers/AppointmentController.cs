@@ -33,6 +33,14 @@ namespace NutriLife.PresentationLayer.Controllers
             return Ok(result);
         }
 
+        [HttpGet("AvailableAppointments/{subscriptionId}")]
+        public async Task<IActionResult> GetAvailableAppointmentsAsync(int subscriptionId)
+        {
+            var result = await _appointmentService.GetAvailableAppointmentsAsync(subscriptionId);
+            if(result == null) { return BadRequest(result); }
+            return Ok(result);
+        }
+
         [HttpPost("ReserveAppointment")]
         [Authorize(Roles = "Client")]
         public async Task<IActionResult> ReserveAppointment(AppointmentRequest request)

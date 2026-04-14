@@ -1,4 +1,5 @@
-﻿using Nutrilife.DataAccessLayer.Models;
+﻿using Nutrilife.DataAccessLayer.DTO.Response;
+using Nutrilife.DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,6 @@ namespace Nutrilife.DataAccessLayer.Repository
         Task<Subscription?> GetByIdAsync(int subscriptionId); // return subscription
         Task<Subscription> UpdateAsync(Subscription subscription);
         Task<List<Subscription>> GetClientsByNutritionistAsync(string nutritionistId);
+        Task<List<NutritionistSubscriptionRequestsResponse>> GetNutriRequests(string nutritionistId);
     }
 }

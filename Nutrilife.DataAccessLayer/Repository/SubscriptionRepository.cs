@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Mapster;
+using Microsoft.EntityFrameworkCore;
 using Nutrilife.DataAccessLayer.Data;
+using Nutrilife.DataAccessLayer.DTO.Response;
 using Nutrilife.DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
@@ -17,7 +19,7 @@ namespace Nutrilife.DataAccessLayer.Repository
         }
 
 
-
+        // يرجع الاشتراك لهذا المراجع
         public async Task<Subscription?> GetActiveSubscriptionAsync(string clientId)
         {
             return await GetOne(
@@ -36,6 +38,26 @@ namespace Nutrilife.DataAccessLayer.Repository
                                   s.Status == SubscriptionStatus.Active)
                       .ToList();
         }
+
+        //يرجغ طلبات الاشتراك مع هذا الاخصائي
+        public async Task<List<NutritionistSubscriptionRequestsResponse>> GetNutriRequests (string nutritionistId)
+        {
+            var result = await _context.Subscriptions.Include(s => s.Client)
+                .Where(s => s.NutritionistId == nutritionistId
+                && s.Status == SubscriptionStatus.Pending)
+                .Select(s => new NutritionistSubscriptionRequestsResponse
+                {
+                    SubscriptionId = s.SubscriptionId,
+                    ClientName = s.Client.FullName,
+                    PlanId = s.UserPlan,
+                    Notes = s.Notes
+                }).ToListAsync();
+
+            return result;
+            
+        }
+
+       
         public async Task<Subscription?> GetByIdAsync(int subscriptionId)
         {
             return await GetOne(

@@ -11,6 +11,7 @@ namespace Nutrilife.DataAccessLayer.Models
         public int Id { get; set; }
         public string Title { get; set; }
         public decimal price { get; set; }
+        public int NumOfDays { get; set; }
         public List<string> Description { get; set; }
         public string nutritionistId { get; set; }
     }

@@ -10,6 +10,7 @@ namespace Nutrilife.DataAccessLayer.DTO.Request
     {
         public string Title { get; set; }
         public decimal price { get; set; }
+        public int NumOfDays { get; set; }
         public List<string> Description { get; set; }
         public string nutritionistId { get; set; }
     }

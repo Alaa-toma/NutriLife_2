@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.logiclayer\\service\\subscriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|solutionrelative:nutrilife.logiclayer\\service\\subscriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12032744-4C59-4B2C-BC87-6842B0F87201}|NutriLife.PresentationLayer\\NutriLife.PresentationLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.presentationlayer\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12032744-4C59-4B2C-BC87-6842B0F87201}|NutriLife.PresentationLayer\\NutriLife.PresentationLayer.csproj|solutionrelative:nutrilife.presentationlayer\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.logiclayer\\service\\iappointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|solutionrelative:nutrilife.logiclayer\\service\\iappointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.logiclayer\\service\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|solutionrelative:nutrilife.logiclayer\\service\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\repository\\appointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\repository\\appointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\repository\\iappointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\repository\\iappointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\dto\\response\\availableappointments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\dto\\response\\availableappointments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\repository\\subscriptionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -18,32 +38,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SubscriptionService.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\SubscriptionService.cs",
-              "RelativeDocumentMoniker": "Nutrilife.LogicLayer\\Service\\SubscriptionService.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\SubscriptionService.cs*",
-              "RelativeToolTip": "Nutrilife.LogicLayer\\Service\\SubscriptionService.cs*",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAQwCUAAABYAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "IAppointmentService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\IAppointmentService.cs",
+              "RelativeDocumentMoniker": "Nutrilife.LogicLayer\\Service\\IAppointmentService.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\IAppointmentService.cs",
+              "RelativeToolTip": "Nutrilife.LogicLayer\\Service\\IAppointmentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-07T13:23:37.569Z",
+              "WhenOpened": "2026-04-14T20:01:24.197Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "AppointmentController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\NutriLife.PresentationLayer\\Controllers\\AppointmentController.cs",
+              "RelativeDocumentMoniker": "NutriLife.PresentationLayer\\Controllers\\AppointmentController.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\NutriLife.PresentationLayer\\Controllers\\AppointmentController.cs",
+              "RelativeToolTip": "NutriLife.PresentationLayer\\Controllers\\AppointmentController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwCMAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T19:58:54.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppointmentService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\AppointmentService.cs",
+              "RelativeDocumentMoniker": "Nutrilife.LogicLayer\\Service\\AppointmentService.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\AppointmentService.cs",
+              "RelativeToolTip": "Nutrilife.LogicLayer\\Service\\AppointmentService.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABUAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T19:42:26.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IAppointmentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\IAppointmentRepository.cs",
+              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\Repository\\IAppointmentRepository.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\IAppointmentRepository.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\Repository\\IAppointmentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T19:42:18.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "SubscriptionRepository.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\SubscriptionRepository.cs",
               "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\Repository\\SubscriptionRepository.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\SubscriptionRepository.cs*",
-              "RelativeToolTip": "Nutrilife.DataAccessLayer\\Repository\\SubscriptionRepository.cs*",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAABiAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\SubscriptionRepository.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\Repository\\SubscriptionRepository.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCkAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-07T13:22:34.454Z",
+              "WhenOpened": "2026-04-14T19:40:19.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AvailableAppointments.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\DTO\\Response\\AvailableAppointments.cs",
+              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\DTO\\Response\\AvailableAppointments.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\DTO\\Response\\AvailableAppointments.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\DTO\\Response\\AvailableAppointments.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T19:32:40.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppointmentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\AppointmentRepository.cs",
+              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\Repository\\AppointmentRepository.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\AppointmentRepository.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\Repository\\AppointmentRepository.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T19:23:28.581Z",
               "EditorCaption": ""
             }
           ]

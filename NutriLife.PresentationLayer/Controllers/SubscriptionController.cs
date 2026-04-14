@@ -73,5 +73,13 @@ namespace NutriLife.PresentationLayer.Controllers
             return Ok(result);
         }
 
+        [HttpGet("NutritionistSubscriptionRequests/{nutriID}")]
+        [Authorize(Roles = "Nutritionist")]
+        public async Task<IActionResult> NutritionistSubscriptionRequests(string nutriID)
+        {
+            var result = await _subscriptionService.NutriSubscriptionRequest(nutriID);
+            return Ok(result);
+        }
+
     }
 }

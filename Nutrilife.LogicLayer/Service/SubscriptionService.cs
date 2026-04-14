@@ -18,14 +18,17 @@ namespace Nutrilife.LogicLayer.Service
         private readonly ISubscriptionRepository _SubscriptionRepository;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly INutritionistRepository _nutritionistRepository;
+        private readonly INutritionistPlansRepository _nutritionistPlansRepository;
 
         public SubscriptionService(ISubscriptionRepository subscriptionRepository,
             IHttpContextAccessor httpContextAccessor,
-            INutritionistRepository nutritionistRepository)
+            INutritionistRepository nutritionistRepository,
+            INutritionistPlansRepository nutritionistPlansRepository )
         {
             _SubscriptionRepository = subscriptionRepository;
             _httpContextAccessor = httpContextAccessor;
             _nutritionistRepository = nutritionistRepository;
+            _nutritionistPlansRepository = nutritionistPlansRepository;
         }
 
 
@@ -50,7 +53,8 @@ namespace Nutrilife.LogicLayer.Service
 
             if (existing != null)
                 throw new Exception("You already have an active subscription or" +
-                    " Sent A subscription request befor, cancel it to make a new one");
+                    " Sent A subscription request befor, cancel it to make a new one" +
+                    $".. Subscription Id = {existing.SubscriptionId}");
 
             var subscription = request.Adapt<Subscription>();
             subscription.ClientId = GetCurrentUserId();
@@ -75,7 +79,15 @@ namespace Nutrilife.LogicLayer.Service
             if (subscription.Status != SubscriptionStatus.Pending)
                 throw new Exception("Only pending subscriptions can be approved");
 
+            var plan = await _nutritionistPlansRepository.GetByIdAsync(subscription.UserPlan);
+            if (plan == null)
+            {
+                throw new Exception("Plan you try to subscribe in is not found");
+            }
+
             subscription.Status = SubscriptionStatus.Active;
+            subscription.StartDate = DateOnly.FromDateTime(DateTime.UtcNow);
+            subscription.EndDate= DateOnly.FromDateTime(DateTime.UtcNow).AddDays(plan.NumOfDays);
 
             var updated = await _SubscriptionRepository.UpdateAsync(subscription);
             return updated.Adapt<SubscriptionResponse>();
@@ -151,5 +163,13 @@ namespace Nutrilife.LogicLayer.Service
             return subscriptions.Adapt<List<SubscriptionResponse>>();
         }
 
+        public async Task< List<NutritionistSubscriptionRequestsResponse> > NutriSubscriptionRequest(string nutriId)
+        {
+            var requests = await _SubscriptionRepository.GetNutriRequests(nutriId);
+
+            return requests;
+        }
+    
+    
     }
 }

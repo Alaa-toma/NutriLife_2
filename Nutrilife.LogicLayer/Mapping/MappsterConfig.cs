@@ -14,6 +14,12 @@ namespace Nutrilife.LogicLayer.Mapping
         public static void MappsterConfigRegister()
         {
             TypeAdapterConfig<Client, ClientResponse>.NewConfig().Map(dest => dest.Client_id , source=> source.Id);
+
+
+            TypeAdapterConfig<Subscription, NutritionistSubscriptionRequestsResponse>.NewConfig()
+                .Map(dest => dest.PlanId, source => source.UserPlan);
+
+
         }
     }
 }

@@ -17,6 +17,7 @@ namespace Nutrilife.LogicLayer.Service
         Task<SubscriptionResponse?> GetByIdAsync(int subscriptionId);
         Task<List<SubscriptionResponse>> GetClientsByNutritionistAsync();
         Task<SubscriptionResponse> CancelAsync(int subscriptionId);
+        Task<List<NutritionistSubscriptionRequestsResponse>> NutriSubscriptionRequest(string nutriId);
     }
     
 }
