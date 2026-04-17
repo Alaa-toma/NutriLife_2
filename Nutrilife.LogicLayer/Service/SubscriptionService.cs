@@ -154,6 +154,7 @@ namespace Nutrilife.LogicLayer.Service
             return updated.Adapt<SubscriptionResponse>();
         }
 
+        // المشتركين مع هذا الاخصائي
         public async Task<List<SubscriptionResponse>> GetClientsByNutritionistAsync()
         {
             var nutritionistId = GetCurrentUserId();
@@ -163,6 +164,7 @@ namespace Nutrilife.LogicLayer.Service
             return subscriptions.Adapt<List<SubscriptionResponse>>();
         }
 
+        //طلبات الاشتراك الظاهرة عند الاخصائي 
         public async Task< List<NutritionistSubscriptionRequestsResponse> > NutriSubscriptionRequest(string nutriId)
         {
             var requests = await _SubscriptionRepository.GetNutriRequests(nutriId);
@@ -170,6 +172,13 @@ namespace Nutrilife.LogicLayer.Service
             return requests;
         }
     
-    
+        
+        public async Task<SubscriptionHistory> ClientSubscriptionHistory(string clientId)
+        {
+            var r=  await _SubscriptionRepository.GetAllAsync(new[] { "Client", "Payments", "Package" });
+
+            return r.Adapt<SubscriptionHistory>();
+        }
+
     }
 }

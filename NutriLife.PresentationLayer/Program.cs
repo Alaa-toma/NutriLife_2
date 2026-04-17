@@ -67,9 +67,16 @@ namespace NutriLife.PresentationLayer
 
 
             builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+            builder.Services.AddScoped<IFeedBackRepository, FeedBackRepository>();
+            builder.Services.AddScoped<IFeedBackService, FeedBackService>();
+
+
 
             builder.Services.AddScoped<IAppointmentService, AppointmentService>();
             builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+
+            builder.Services.AddScoped<IFileService, FileService>();
+
 
             builder.Services.AddScoped<ISeedData, RoleSeedData>();
 
@@ -102,7 +109,7 @@ namespace NutriLife.PresentationLayer
          .AddJsonOptions(options =>
          {
              options.JsonSerializerOptions.Converters
-                 .Add(new JsonStringEnumConverter()); // ← allows "Electronic" instead of 0
+                 .Add(new JsonStringEnumConverter()); 
          });
 
             builder.Services.AddAuthentication(options =>
@@ -162,6 +169,7 @@ namespace NutriLife.PresentationLayer
             app.UseAuthorization();
 
 
+            app.UseStaticFiles();
 
 
             app.MapControllers();

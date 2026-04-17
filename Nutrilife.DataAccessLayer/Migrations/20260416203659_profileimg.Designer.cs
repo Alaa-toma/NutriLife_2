@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Nutrilife.DataAccessLayer.Data;
 
@@ -11,9 +12,11 @@ using Nutrilife.DataAccessLayer.Data;
 namespace Nutrilife.DataAccessLayer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260416203659_profileimg")]
+    partial class profileimg
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -289,34 +292,6 @@ namespace Nutrilife.DataAccessLayer.Migrations
                     b.ToTable("Appointments");
                 });
 
-            modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.FeedBack", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("content")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateOnly>("date")
-                        .HasColumnType("date");
-
-                    b.Property<int>("rate")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("subscriptionId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("subscriptionId");
-
-                    b.ToTable("FeedBacks");
-                });
-
             modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.NutritionistPlans", b =>
                 {
                     b.Property<int>("Id")
@@ -503,16 +478,6 @@ namespace Nutrilife.DataAccessLayer.Migrations
                         .WithMany("Appointments")
                         .HasForeignKey("SubscriptioId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.Navigation("Subscription");
-                });
-
-            modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.FeedBack", b =>
-                {
-                    b.HasOne("Nutrilife.DataAccessLayer.Models.Subscription", "Subscription")
-                        .WithMany()
-                        .HasForeignKey("subscriptionId")
-                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Subscription");
                 });

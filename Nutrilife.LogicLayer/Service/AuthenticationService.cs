@@ -13,6 +13,7 @@ using Nutrilife.DataAccessLayer.DTO.Request;
 using Nutrilife.DataAccessLayer.DTO.Response;
 using Nutrilife.DataAccessLayer.Models;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 
@@ -26,18 +27,22 @@ namespace Nutrilife.LogicLayer.Service
         private readonly IConfiguration _configuration;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly ApplicationDbContext _dbContext;
+        private readonly IFileService _fileService;
 
         public AuthenticationService(UserManager<ApplicationUser> UserManager,
             IEmailSender emailSender,
             IConfiguration configuration, IHttpContextAccessor httpContextAccessor, 
-            ApplicationDbContext dbContext) 
+            ApplicationDbContext dbContext, IFileService fileService) 
         {
             _UserManager = UserManager;
             _EmailSender = emailSender;
             _configuration = configuration;
             _httpContextAccessor = httpContextAccessor;
             _dbContext = dbContext;
+            _fileService = fileService;
         }  
+
+
          public async Task<RegisterResponse> RegisterAsync(ClientRequest request)
         {
             var user = request.Adapt<Client>();
@@ -188,6 +193,8 @@ namespace Nutrilife.LogicLayer.Service
 
         }
 
+
+        // if err happend in email, user could 
         public async Task<bool> ResendConfirmationEmailAsync(string email)
         {
             var user = await _UserManager.FindByEmailAsync(email);
@@ -209,7 +216,8 @@ namespace Nutrilife.LogicLayer.Service
             return true;
         }
 
-
+        
+        // send 4 numbers code (available for 15 min) that allow user to reset his password
         public async Task<ResetPasswordResponse> resetPasswordAsync(ResendConfirmationEmailDTO request)
         {
             var user = await _UserManager.FindByEmailAsync(request.Email);
@@ -355,6 +363,83 @@ namespace Nutrilife.LogicLayer.Service
                 };
 
             return new DeleteAccountResponse { Success = true, Message = "Account deleted successfully." };
+        }
+
+        private string GetCurrentUserId()
+        {
+            return _httpContextAccessor.HttpContext?
+                .User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        }
+        public async Task<ProfileImageResponse> AddProfileImgAsync(UploadProfileImageRequest request)
+        {
+            // check file
+            if (request.File == null || request.File.Length == 0)
+                throw new ArgumentException("No file uploaded.");
+
+            // check extention
+            var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".webp" };
+            var extension = Path.GetExtension(request.File.FileName).ToLower();
+            if (!allowedExtensions.Contains(extension))
+                throw new ArgumentException("Invalid file type. Only jpg, jpeg, png, and webp are allowed.");
+
+
+            var user = await _dbContext.Users.FindAsync(GetCurrentUserId());
+            //حذف الصورة القديمة
+            if (!string.IsNullOrEmpty(user.ProfileImage))
+            { await _fileService.DeleteAsync(user.ProfileImage); }
+
+            var fileName = await _fileService.UploadAsync(request.File);
+
+            user.ProfileImage = fileName;
+            await _UserManager.UpdateAsync(user);
+
+            return new ProfileImageResponse() 
+            {
+                ProfileImage = fileName,
+                ProfileImageUrl = BuildImageUrl(fileName)
+            };
+        }
+
+        public async Task<ProfileImageResponse> GetProfileImgAsync()
+        {
+            var userId = GetCurrentUserId();
+            var user = await _dbContext.Users.FindAsync(userId)
+                ?? throw new Exception("User not found.");
+
+            if (string.IsNullOrEmpty(user.ProfileImage))
+                throw new Exception("No profile image found.");
+
+            return new ProfileImageResponse
+            {
+                ProfileImage = user.ProfileImage,
+                ProfileImageUrl = BuildImageUrl(user.ProfileImage)
+            };
+        }
+
+        public async Task DeleteProfileImgAsync()
+        {
+            var userId = GetCurrentUserId();
+            var user = await _dbContext.Users.FindAsync(userId)
+                ?? throw new Exception("User not found.");
+
+            if (string.IsNullOrEmpty(user.ProfileImage))
+                throw new Exception("No profile image to delete.");
+
+            // 1. Delete from wwwroot
+           await _fileService.DeleteAsync(user.ProfileImage);
+
+            // 2. Clear from DB
+            user.ProfileImage = null;
+            await _UserManager.UpdateAsync(user);
+        }
+
+        private string BuildImageUrl(string fileName)
+        {
+            // Returns: https://nutrilife.runasp.net/images/profiles/filename.jpg
+            var baseUrl = _configuration["AppSettings:BaseUrl"]
+                ?? $"{_httpContextAccessor.HttpContext!.Request.Scheme}://{_httpContextAccessor.HttpContext.Request.Host}";
+
+            return $"{baseUrl}/images/profiles/{fileName}";
         }
     }
 }

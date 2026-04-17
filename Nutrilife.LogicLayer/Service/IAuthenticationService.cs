@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Nutrilife.DataAccessLayer.DTO.Request;
 using Nutrilife.DataAccessLayer.DTO.Response;
 using System;
@@ -22,5 +23,10 @@ namespace Nutrilife.LogicLayer.Service
         Task<List<ClientResponse>> GetAllClientsInNutrilife();
          Task<List<NutritionistResponse>> GetAllNutritionistInNutrilife();
         Task<DeleteAccountResponse> DeleteAccountAsync(DeleteAccountRequest request);
+
+
+        Task<ProfileImageResponse> AddProfileImgAsync(UploadProfileImageRequest request);
+        Task DeleteProfileImgAsync();
+        Task<ProfileImageResponse> GetProfileImgAsync();
     }
 }

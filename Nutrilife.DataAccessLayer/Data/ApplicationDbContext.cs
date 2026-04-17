@@ -6,6 +6,7 @@ using Nutrilife.DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,8 @@ namespace Nutrilife.DataAccessLayer.Data
         public DbSet<Subscription> Subscriptions { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<NutritionistPlans> NutritionistPlans { get; set; }
+        public DbSet<FeedBack> FeedBacks { get; set; }
+
 
 
 
@@ -86,6 +89,13 @@ namespace Nutrilife.DataAccessLayer.Data
               .HasForeignKey(a => a.SubscriptioId)
               .IsRequired(false)
               .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<FeedBack>()
+                 .HasOne(f => f.Subscription)
+                  .WithMany()
+                .HasForeignKey(f => f.subscriptionId)
+                .IsRequired(false)       
+                .OnDelete(DeleteBehavior.SetNull);
         }
 
 

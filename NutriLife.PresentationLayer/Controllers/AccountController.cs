@@ -7,6 +7,7 @@ using Nutrilife.DataAccessLayer.DTO.Request;
 using IAuthenticationService = Nutrilife.LogicLayer.Service.IAuthenticationService;
 using RegisterRequest = Nutrilife.DataAccessLayer.DTO.Request.RegisterRequest;
 using LoginRequest = Nutrilife.DataAccessLayer.DTO.Request.LoginRequest;
+using Microsoft.AspNetCore.Authorization;
 
 namespace NutriLife.PresentationLayer.Controllers
 {
@@ -15,9 +16,13 @@ namespace NutriLife.PresentationLayer.Controllers
     public class AccountController : ControllerBase
     {
         private readonly IAuthenticationService _authenticationService;
-        public AccountController(IAuthenticationService authenticationService)
+        private readonly IFileService _fileService;
+
+        public AccountController(IAuthenticationService authenticationService, 
+            IFileService fileService)
         {
             _authenticationService = authenticationService;
+            _fileService = fileService;
         }
 
         [HttpPost("Register")]
@@ -118,6 +123,58 @@ namespace NutriLife.PresentationLayer.Controllers
                 return BadRequest(result);
             }
             return Ok(result);
+        }
+        
+        
+        [HttpGet("myprofileimg")]
+        public async Task<IActionResult> GetProfileImage()
+        {
+            try
+            {
+                var result = await _authenticationService.GetProfileImgAsync();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+        }
+
+
+        [HttpPost("addprofileimg")]
+        [Authorize]
+        public async Task<IActionResult> UploadProfileImage(
+        [FromForm] UploadProfileImageRequest request)
+        {
+            try
+            {
+                var result = await _authenticationService.AddProfileImgAsync(request);
+                return Ok(result);
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = ex.Message });
+            }
+        }
+
+        [HttpDelete("deleteprofileimg")]
+        [Authorize]
+        public async Task<IActionResult> DeleteProfileImage()
+        {
+            try
+            {
+                await _authenticationService.DeleteProfileImgAsync();
+                return Ok(new { message = "Profile image deleted successfully." });
+            }
+            catch (Exception ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+
         }
     }
 }

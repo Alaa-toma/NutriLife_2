@@ -21,6 +21,9 @@ namespace Nutrilife.DataAccessLayer.Models
              public bool IsDeleted { get; set; } = false;
              public DateTime? DeletedOn { get; set; }
 
+             public string? ProfileImage { get; set; }
+
+
 
     }
 }
