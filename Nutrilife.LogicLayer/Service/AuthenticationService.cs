@@ -346,6 +346,7 @@ namespace Nutrilife.LogicLayer.Service
                 };
 
             // 3. Soft delete 
+            await DeleteProfileImgAsync(); // delete from db and server 
             user.IsDeleted = true;
             user.DeletedOn = DateTime.UtcNow;
             user.Email = $"deleted_{request.Id}@deleted.com";      // free up the email
@@ -426,7 +427,7 @@ namespace Nutrilife.LogicLayer.Service
                 throw new Exception("No profile image to delete.");
 
             // 1. Delete from wwwroot
-           await _fileService.DeleteAsync(user.ProfileImage);
+           await _fileService.DeleteAsync(user.ProfileImage); // my method in fileservice
 
             // 2. Clear from DB
             user.ProfileImage = null;
