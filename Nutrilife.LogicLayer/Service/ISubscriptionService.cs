@@ -18,6 +18,8 @@ namespace Nutrilife.LogicLayer.Service
         Task<List<SubscriptionResponse>> GetClientsByNutritionistAsync();
         Task<SubscriptionResponse> CancelAsync(int subscriptionId);
         Task<List<NutritionistSubscriptionRequestsResponse>> NutriSubscriptionRequest(string nutriId);
+        Task<List<SubscriptionHistory>> ClientSubscriptionHistory(string clientId);
+        Task<List<SubscriptionHistory>> NutritionistSubscriptionHistory(string nutriId);
     }
     
 }

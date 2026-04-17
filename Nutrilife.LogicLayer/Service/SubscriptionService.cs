@@ -173,11 +173,18 @@ namespace Nutrilife.LogicLayer.Service
         }
     
         
-        public async Task<SubscriptionHistory> ClientSubscriptionHistory(string clientId)
+        public async Task<List<SubscriptionHistory>> ClientSubscriptionHistory(string clientId)
         {
-            var r=  await _SubscriptionRepository.GetAllAsync(new[] { "Client", "Payments", "Package" });
+            var subscriptions=  await _SubscriptionRepository.ClientSubscriptionHistory(clientId);
 
-            return r.Adapt<SubscriptionHistory>();
+           return subscriptions;
+        }
+
+        public async Task<List<SubscriptionHistory>> NutritionistSubscriptionHistory(string nutriId)
+        {
+            var subscriptions = await _SubscriptionRepository.NutritionistSubscriptionHistory(nutriId);
+
+            return subscriptions;
         }
 
     }

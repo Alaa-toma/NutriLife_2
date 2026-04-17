@@ -81,5 +81,32 @@ namespace NutriLife.PresentationLayer.Controllers
             return Ok(result);
         }
 
+
+        [HttpGet("clientHistory/{clientID}")]
+        [Authorize(Roles = "Client")]
+        public async Task<IActionResult> ClientSubscriptionHistory(string clientID)
+        {
+            var result = await _subscriptionService.ClientSubscriptionHistory(clientID);
+            if (result == null)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);  
+        }
+
+
+
+        [HttpGet("NutritionistHistory/{nutriID}")]
+        [Authorize(Roles = "Nutritionist")]
+        public async Task<IActionResult> NutritionistSubscriptionHistory(string nutriID)
+        {
+            var result = await _subscriptionService.NutritionistSubscriptionHistory(nutriID);
+            if (result == null)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
+        }
+
     }
 }

@@ -19,6 +19,11 @@ namespace Nutrilife.LogicLayer.Mapping
             TypeAdapterConfig<Subscription, NutritionistSubscriptionRequestsResponse>.NewConfig()
                 .Map(dest => dest.PlanId, source => source.UserPlan);
 
+            TypeAdapterConfig<Subscription, SubscriptionHistory>.NewConfig()
+                .Map(dest => dest.subscriptionId , source => source.SubscriptionId)
+                .Map(dest=> dest.ClientName, source=> source.Client.FullName)
+                .Map(dest => dest.NutritionistName, source => source.Nutritionist.FullName);
+
 
         }
     }

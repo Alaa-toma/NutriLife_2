@@ -73,5 +73,21 @@ namespace Nutrilife.DataAccessLayer.Repository
             return subscription;
         }
 
+        public async Task<List<SubscriptionHistory>> ClientSubscriptionHistory(string ClientId)
+        {
+            var subscriptions = await _context.Subscriptions.Include(s=> s.Client).Include(s=> s.Nutritionist)
+                .Where(s=> s.ClientId ==  ClientId).ToListAsync();
+
+            return subscriptions.Adapt<List<SubscriptionHistory>>();
+        }
+
+        public async Task<List<SubscriptionHistory>> NutritionistSubscriptionHistory(string nutriID)
+        {
+            var subscriptions = await _context.Subscriptions.Include(s => s.Client).Include(s => s.Nutritionist)
+                .Where(s => s.NutritionistId == nutriID).ToListAsync();
+
+            return subscriptions.Adapt<List<SubscriptionHistory>>();
+        }
+
     }
 }

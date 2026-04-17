@@ -16,5 +16,7 @@ namespace Nutrilife.DataAccessLayer.Repository
         Task<Subscription> UpdateAsync(Subscription subscription);
         Task<List<Subscription>> GetClientsByNutritionistAsync(string nutritionistId);
         Task<List<NutritionistSubscriptionRequestsResponse>> GetNutriRequests(string nutritionistId);
+        Task<List<SubscriptionHistory>> ClientSubscriptionHistory(string ClientId);
+        Task<List<SubscriptionHistory>> NutritionistSubscriptionHistory(string nutriID);
     }
 }
