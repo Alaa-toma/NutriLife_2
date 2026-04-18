@@ -3,32 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{12032744-4C59-4B2C-BC87-6842B0F87201}|NutriLife.PresentationLayer\\NutriLife.PresentationLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.presentationlayer\\controllers\\subscriptioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{12032744-4C59-4B2C-BC87-6842B0F87201}|NutriLife.PresentationLayer\\NutriLife.PresentationLayer.csproj|solutionrelative:nutrilife.presentationlayer\\controllers\\subscriptioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.logiclayer\\service\\subscriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|solutionrelative:nutrilife.logiclayer\\service\\subscriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\models\\scheduledmeal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\models\\scheduledmeal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\repository\\isubscriptionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\repository\\isubscriptionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\models\\planofday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\models\\planofday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\repository\\subscriptionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\repository\\subscriptionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\models\\healthreaources.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\models\\healthreaources.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.logiclayer\\service\\isubscriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|solutionrelative:nutrilife.logiclayer\\service\\isubscriptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\models\\mealplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\models\\mealplan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\dto\\response\\subscriptionhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\dto\\response\\subscriptionhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\dto\\response\\mealplanresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\dto\\response\\mealplanresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.logiclayer\\mapping\\mappsterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|solutionrelative:nutrilife.logiclayer\\mapping\\mappsterconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\models\\meallog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\models\\meallog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\dto\\request\\mealplanrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\dto\\request\\mealplanrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,92 +42,111 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MappsterConfig.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Mapping\\MappsterConfig.cs",
-              "RelativeDocumentMoniker": "Nutrilife.LogicLayer\\Mapping\\MappsterConfig.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Mapping\\MappsterConfig.cs",
-              "RelativeToolTip": "Nutrilife.LogicLayer\\Mapping\\MappsterConfig.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwBgAAABbAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ScheduledMeal.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Models\\ScheduledMeal.cs",
+              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\Models\\ScheduledMeal.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Models\\ScheduledMeal.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\Models\\ScheduledMeal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T13:57:40.583Z"
+              "WhenOpened": "2026-04-18T23:07:24.254Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ISubscriptionRepository.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\ISubscriptionRepository.cs",
-              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\Repository\\ISubscriptionRepository.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\ISubscriptionRepository.cs",
-              "RelativeToolTip": "Nutrilife.DataAccessLayer\\Repository\\ISubscriptionRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABYAAAAAAAAAA==",
+              "Title": "PlanOfDay.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Models\\PlanOfDay.cs",
+              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\Models\\PlanOfDay.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Models\\PlanOfDay.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\Models\\PlanOfDay.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T13:52:21.817Z"
+              "WhenOpened": "2026-04-18T23:06:50.451Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ISubscriptionService.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\ISubscriptionService.cs",
-              "RelativeDocumentMoniker": "Nutrilife.LogicLayer\\Service\\ISubscriptionService.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\ISubscriptionService.cs",
-              "RelativeToolTip": "Nutrilife.LogicLayer\\Service\\ISubscriptionService.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABUAAABYAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "HealthReaources.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Models\\HealthReaources.cs",
+              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\Models\\HealthReaources.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Models\\HealthReaources.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\Models\\HealthReaources.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T13:44:37.954Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SubscriptionController.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\NutriLife.PresentationLayer\\Controllers\\SubscriptionController.cs",
-              "RelativeDocumentMoniker": "NutriLife.PresentationLayer\\Controllers\\SubscriptionController.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\NutriLife.PresentationLayer\\Controllers\\SubscriptionController.cs",
-              "RelativeToolTip": "NutriLife.PresentationLayer\\Controllers\\SubscriptionController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGIAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T13:43:50.6Z",
+              "WhenOpened": "2026-04-18T23:04:38.575Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "SubscriptionHistory.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\DTO\\Response\\SubscriptionHistory.cs",
-              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\DTO\\Response\\SubscriptionHistory.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\DTO\\Response\\SubscriptionHistory.cs",
-              "RelativeToolTip": "Nutrilife.DataAccessLayer\\DTO\\Response\\SubscriptionHistory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA2AAAAAAAAAA==",
+              "Title": "MealPlanResponse.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\DTO\\Response\\MealPlanResponse.cs",
+              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\DTO\\Response\\MealPlanResponse.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\DTO\\Response\\MealPlanResponse.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\DTO\\Response\\MealPlanResponse.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAA8wAsAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T13:17:06.985Z"
+              "WhenOpened": "2026-04-18T21:36:59.678Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SubscriptionService.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\SubscriptionService.cs",
-              "RelativeDocumentMoniker": "Nutrilife.LogicLayer\\Service\\SubscriptionService.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\SubscriptionService.cs",
-              "RelativeToolTip": "Nutrilife.LogicLayer\\Service\\SubscriptionService.cs",
-              "ViewState": "AgIAAJsAAAAAAAAAAAAwwLYAAABUAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "MealPlanRequest.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\DTO\\Request\\MealPlanRequest.cs",
+              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\DTO\\Request\\MealPlanRequest.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\DTO\\Request\\MealPlanRequest.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\DTO\\Request\\MealPlanRequest.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAA5wFEAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T13:15:34.135Z"
+              "WhenOpened": "2026-04-18T20:43:22.298Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SubscriptionRepository.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\SubscriptionRepository.cs",
-              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\Repository\\SubscriptionRepository.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\SubscriptionRepository.cs",
-              "RelativeToolTip": "Nutrilife.DataAccessLayer\\Repository\\SubscriptionRepository.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAqwEsAAABfAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "MealLog.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Models\\MealLog.cs",
+              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\Models\\MealLog.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Models\\MealLog.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\Models\\MealLog.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T09:29:15.592Z"
+              "WhenOpened": "2026-04-18T14:36:48.564Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAcwBkAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T14:30:29.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MealPlan.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Models\\MealPlan.cs",
+              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\Models\\MealPlan.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Models\\MealPlan.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\Models\\MealPlan.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-18T14:26:28.776Z"
             }
           ]
         }

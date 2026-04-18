@@ -23,6 +23,16 @@ namespace Nutrilife.DataAccessLayer.Data
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<NutritionistPlans> NutritionistPlans { get; set; }
         public DbSet<FeedBack> FeedBacks { get; set; }
+        public DbSet<MealPlan> mealPlans { get; set; }
+        public DbSet<PlanOfDay> planOfDays { get; set; }
+        public DbSet<ScheduledMeal> scheduledMeals { get; set; }
+        public DbSet<MealLog> mealLogs { get; set; }
+        public DbSet<HealthReaources> healthReaources { get; set; }
+
+
+
+
+
 
 
 
@@ -96,6 +106,58 @@ namespace Nutrilife.DataAccessLayer.Data
                 .HasForeignKey(f => f.subscriptionId)
                 .IsRequired(false)       
                 .OnDelete(DeleteBehavior.SetNull);
+
+
+            builder.Entity<MealPlan>(e =>
+            {
+                e.HasKey(x => x.Id);
+                e.Property(x => x.status).HasConversion<string>(); // store enum as string
+                
+            });
+
+
+            builder.Entity<PlanOfDay>(e =>
+            {
+                e.HasKey(x => x.Id);
+                e.HasIndex(x => new { x.mealPlanId, x.DayNumber }).IsUnique(); // plan A has day x (no dublication)
+                e.HasOne(x => x.mealPlan)
+                 .WithMany(x => x.Days)
+                 .HasForeignKey(x => x.mealPlanId)
+                 .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            builder.Entity<ScheduledMeal>(e =>
+            {
+                e.HasKey(x => x.Id);
+                e.Property(x => x.MealType).HasConversion<string>(); // store enum as string
+                e.HasOne(x => x.planday)
+                 .WithMany(x => x.meals)
+                 .HasForeignKey(x => x.PlanOfDayId)
+                 .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            builder.Entity<MealLog>(e =>
+            {
+                e.HasKey(x => x.id);
+                e.Property(x => x.status).HasConversion<string>();
+
+                e.HasIndex(x => x.ScheduledMealId)
+                 .IsUnique()
+                 .HasFilter("[ScheduledMealId] IS NOT NULL");
+
+
+                e.HasOne(x => x.ScheduledMeal)
+                 .WithOne(x => x.log)
+                 .HasForeignKey<MealLog>(x => x.ScheduledMealId)
+                 .IsRequired(false)
+                 .OnDelete(DeleteBehavior.Cascade);
+
+                e.HasOne(x => x.planDay)
+                 .WithMany()
+                 .HasForeignKey(x => x.PlanOfDayId)
+                 .IsRequired(false)
+                 .OnDelete(DeleteBehavior.NoAction);
+            });
         }
 
 

@@ -317,6 +317,90 @@ namespace Nutrilife.DataAccessLayer.Migrations
                     b.ToTable("FeedBacks");
                 });
 
+            modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.HealthReaources", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("healthReaources");
+                });
+
+            modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.MealLog", b =>
+                {
+                    b.Property<Guid>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CustomMealDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomMealName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("PlanOfDayId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ScheduledMealId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("clientId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("PlanOfDayId");
+
+                    b.HasIndex("ScheduledMealId")
+                        .IsUnique()
+                        .HasFilter("[ScheduledMealId] IS NOT NULL");
+
+                    b.ToTable("mealLogs");
+                });
+
+            modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.MealPlan", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ClientId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NutritionistId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateOnly>("StartDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("mealPlans");
+                });
+
             modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.NutritionistPlans", b =>
                 {
                     b.Property<int>("Id")
@@ -348,6 +432,60 @@ namespace Nutrilife.DataAccessLayer.Migrations
                     b.HasIndex("nutritionistId");
 
                     b.ToTable("NutritionistPlans");
+                });
+
+            modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.PlanOfDay", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("DayNumber")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("mealPlanId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("notes")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("mealPlanId", "DayNumber")
+                        .IsUnique();
+
+                    b.ToTable("planOfDays");
+                });
+
+            modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.ScheduledMeal", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("MealDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MealName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MealType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OrderIndex")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("PlanOfDayId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PlanOfDayId");
+
+                    b.ToTable("scheduledMeals");
                 });
 
             modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.Subscription", b =>
@@ -517,6 +655,23 @@ namespace Nutrilife.DataAccessLayer.Migrations
                     b.Navigation("Subscription");
                 });
 
+            modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.MealLog", b =>
+                {
+                    b.HasOne("Nutrilife.DataAccessLayer.Models.PlanOfDay", "planDay")
+                        .WithMany()
+                        .HasForeignKey("PlanOfDayId")
+                        .OnDelete(DeleteBehavior.NoAction);
+
+                    b.HasOne("Nutrilife.DataAccessLayer.Models.ScheduledMeal", "ScheduledMeal")
+                        .WithOne("log")
+                        .HasForeignKey("Nutrilife.DataAccessLayer.Models.MealLog", "ScheduledMealId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.Navigation("ScheduledMeal");
+
+                    b.Navigation("planDay");
+                });
+
             modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.NutritionistPlans", b =>
                 {
                     b.HasOne("Nutrilife.DataAccessLayer.Models.Nutritionist", null)
@@ -524,6 +679,28 @@ namespace Nutrilife.DataAccessLayer.Migrations
                         .HasForeignKey("nutritionistId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.PlanOfDay", b =>
+                {
+                    b.HasOne("Nutrilife.DataAccessLayer.Models.MealPlan", "mealPlan")
+                        .WithMany("Days")
+                        .HasForeignKey("mealPlanId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("mealPlan");
+                });
+
+            modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.ScheduledMeal", b =>
+                {
+                    b.HasOne("Nutrilife.DataAccessLayer.Models.PlanOfDay", "planday")
+                        .WithMany("meals")
+                        .HasForeignKey("PlanOfDayId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("planday");
                 });
 
             modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.Subscription", b =>
@@ -543,6 +720,21 @@ namespace Nutrilife.DataAccessLayer.Migrations
                     b.Navigation("Client");
 
                     b.Navigation("Nutritionist");
+                });
+
+            modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.MealPlan", b =>
+                {
+                    b.Navigation("Days");
+                });
+
+            modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.PlanOfDay", b =>
+                {
+                    b.Navigation("meals");
+                });
+
+            modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.ScheduledMeal", b =>
+                {
+                    b.Navigation("log");
                 });
 
             modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.Subscription", b =>
