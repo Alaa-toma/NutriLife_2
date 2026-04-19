@@ -10,12 +10,12 @@ namespace Nutrilife.DataAccessLayer.Models
     {
         // each day data and list of its  meals
         public Guid Id { get; set; }
-        public Guid mealPlanId { get; set; }
+        public Guid? mealPlanId { get; set; }
         public int DayNumber { get; set; }
         public string? notes { get; set; }
 
 
-        public MealPlan mealPlan { get; set; }
-        public ICollection<ScheduledMeal> meals { get; set; }
+        public MealPlan? mealPlan { get; set; }
+        public ICollection<ScheduledMeal?> meals { get; set; }
     }
 }

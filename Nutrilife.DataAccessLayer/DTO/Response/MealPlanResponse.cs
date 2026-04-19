@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Nutrilife.DataAccessLayer.DTO.Response
 {
-    internal record MealPlanResponse // full plan
+    public record MealPlanResponse // full plan
     {
         public Guid MealPlanId { get; set; }
-        public Guid Id { get; set; }
         public string NutritionistId { get; set; }
         public string ClientId { get; set; }
 
@@ -37,5 +36,25 @@ namespace Nutrilife.DataAccessLayer.DTO.Response
         public PlanStatus status { get; set; }
         public int totalDays { get; set; }  
         public int totalMeals { get; set; }
+    }
+
+    // Response for a single day 
+    public record DayResponse
+    {
+        public Guid DayId { get; set; }
+        public int DayNumber { get; set; }
+        public string? notes { get; set; }
+        public List<ScheduledMealResponse> meals { get; set; } = new();
+    }
+
+    // Response for a single scheduled meal 
+    public record ScheduledMealResponse
+    {
+        public Guid ScheduledMealId { get; set; }
+        public MealType MealType { get; set; }
+        public string MealName { get; set; }
+        public string MealDescription { get; set; }
+        public int OrderIndex { get; set; }
+        public MealLogResponse? Log { get; set; }   // null = patient hasn't responded yet
     }
 }

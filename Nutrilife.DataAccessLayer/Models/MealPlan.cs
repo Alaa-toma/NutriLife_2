@@ -16,7 +16,7 @@ namespace Nutrilife.DataAccessLayer.Models
         public string title { get; set; } // title of plan
         public DateOnly StartDate { get; set; } 
         public PlanStatus status { get; set; } //
-        public ICollection<PlanOfDay> Days { get; set; } // days.. meals in day...>..
+        public ICollection<PlanOfDay?> Days { get; set; } // days.. meals in day...>..
 
     }
 

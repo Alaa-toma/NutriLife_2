@@ -1,4 +1,5 @@
 ﻿using Mapster;
+using Nutrilife.DataAccessLayer.DTO.Request;
 using Nutrilife.DataAccessLayer.DTO.Response;
 using Nutrilife.DataAccessLayer.Models;
 using System;
@@ -23,6 +24,20 @@ namespace Nutrilife.LogicLayer.Mapping
                 .Map(dest => dest.subscriptionId , source => source.SubscriptionId)
                 .Map(dest=> dest.ClientName, source=> source.Client.FullName)
                 .Map(dest => dest.NutritionistName, source => source.Nutritionist.FullName);
+
+
+            TypeAdapterConfig<PlanOfDay, DayResponse>.NewConfig()
+               .Map(dest => dest.DayId, source => source.Id);
+
+            TypeAdapterConfig<MealPlan, MealPlanResponse>.NewConfig()
+              .Map(dest => dest.MealPlanId, source => source.Id); 
+
+            TypeAdapterConfig<MealPlan, MealPlanSummaryResponse>.NewConfig()
+              .Map(dest => dest.MealPlanId, source => source.Id);
+
+
+            TypeAdapterConfig<ScheduledMeal, ScheduledMealResponse>.NewConfig()
+              .Map(dest => dest.ScheduledMealId , source => source.Id);
 
 
         }

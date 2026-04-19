@@ -75,6 +75,17 @@ namespace NutriLife.PresentationLayer
             builder.Services.AddScoped<IAppointmentService, AppointmentService>();
             builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
 
+            builder.Services.AddScoped<IMealPlanService, MealPlanService>();
+            builder.Services.AddScoped<IMealPlanRepository, MealPlanRepository>();
+            builder.Services.AddScoped<IMealLogRepository, MealLogRepository>();
+            builder.Services.AddScoped<ISCheduled_Meals, SCheduled_Meals>();
+            builder.Services.AddScoped<IPlanOfDayRepository, PlanOfDayRepository>();
+
+
+
+
+
+
             builder.Services.AddScoped<IFileService, FileService>();
 
 

@@ -75,7 +75,7 @@ namespace Nutrilife.LogicLayer.Service
                 "        style=\"background:#4CAF50;color:#ffffff;text-decoration:none;padding:12px 24px;" +
                 "border-radius:5px;display:inline-block;font-size:16px;\">\n    " +
                 "      Confirm Account\n        </a>\n      </div>\n\n      <p>If you didn’t create this account," +
-                " you can ignore this message.</p>\n\n      <p>— The {{Website Name}} Team</p>\n\n    </td>\n  </tr>\n\n  <tr>\n " +
+                " you can ignore this message.</p>\n\n      <p>— The {{NutriLife}} Team</p>\n\n    </td>\n  </tr>\n\n  <tr>\n " +
                 "   <td style=\"background:#f4f4f4;text-align:center;padding:15px;font-size:12px;color:#777;\">\n   " +
                 "   © {{2026}} {{NutriLife}}\n    </td>\n  </tr>\n\n</table> "
                 );
@@ -115,7 +115,7 @@ namespace Nutrilife.LogicLayer.Service
                "        style=\"background:#4CAF50;color:#ffffff;text-decoration:none;padding:12px 24px;" +
                "border-radius:5px;display:inline-block;font-size:16px;\">\n    " +
                "      Confirm Account\n        </a>\n      </div>\n\n      <p>If you didn’t create this account," +
-               " you can ignore this message.</p>\n\n      <p>— The {{Website Name}} Team</p>\n\n    </td>\n  </tr>\n\n  <tr>\n " +
+               " you can ignore this message.</p>\n\n      <p>— The {NutriLife}} Team</p>\n\n    </td>\n  </tr>\n\n  <tr>\n " +
                "   <td style=\"background:#f4f4f4;text-align:center;padding:15px;font-size:12px;color:#777;\">\n   " +
                "   © {{2026}} {{NutriLife}}\n    </td>\n  </tr>\n\n</table> "
                );

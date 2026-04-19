@@ -13,15 +13,14 @@ namespace Nutrilife.DataAccessLayer.DTO.Request
 
         public string title { get; set; } // title of plan
         public DateOnly StartDate { get; set; }
-        public ICollection<PlanOfDay> Days { get; set; } // all days, each with there meals inside.
     }
 
 
     public record CreateDayRequest // اليوم ووجباته
     {
+        public Guid mealPlanId { get; set; }
         public int DayNumber { get; set; }
         public string? notes { get; set; }
-        public ICollection<ScheduledMeal> meals { get; set; }
 
     }
 
@@ -29,6 +28,7 @@ namespace Nutrilife.DataAccessLayer.DTO.Request
 
     public record CreateScheduledMealRequest //الوجبة
     {
+        public Guid? PlanOfDayId { get; set; }
         public MealType MealType { get; set; }
         public string MealName { get; set; }
         public string MealDescription { get; set; }
@@ -40,7 +40,6 @@ namespace Nutrilife.DataAccessLayer.DTO.Request
         public Guid mealPlanId { get; set; }
         public int DayNumber { get; set; }
         public string? notes { get; set; }
-        public ICollection<ScheduledMeal> meals { get; set; }
     }
 
     public record AddScheduledMealRequest // اضافة وجبة ليوم موجود سابقا
@@ -66,7 +65,7 @@ namespace Nutrilife.DataAccessLayer.DTO.Request
     // by client ////////////////////
     public record LogMealRequest // انجازه للوجبة
     {
-        public Guid LogMealId { get; set; }
+        
         public Guid ScheduledMealId { get; set; }
         public string clientId { get; set; }
         public LogStatus status { get; set; }
@@ -77,7 +76,7 @@ namespace Nutrilife.DataAccessLayer.DTO.Request
 
     public record LogExtraMealRequest // اضافة وجبة ليست ضمن الخطة
     {
-        public Guid LogMealId { get; set; }
+        public Guid ScheduledMealId { get; set; }
         public Guid clientId { get; set; }
         public Guid PlanOfDayId { get; set; }
         public string? CustomMealName { get; set; }
