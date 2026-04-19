@@ -27,7 +27,6 @@ namespace Nutrilife.DataAccessLayer.Data
         public DbSet<PlanOfDay> planOfDays { get; set; }
         public DbSet<ScheduledMeal> scheduledMeals { get; set; }
         public DbSet<MealLog> mealLogs { get; set; }
-        public DbSet<HealthReaources> healthReaources { get; set; }
 
 
 

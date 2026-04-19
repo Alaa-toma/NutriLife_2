@@ -12,8 +12,8 @@ using Nutrilife.DataAccessLayer.Data;
 namespace Nutrilife.DataAccessLayer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260418230029_init")]
-    partial class init
+    [Migration("20260419084905_first")]
+    partial class first
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

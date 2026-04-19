@@ -317,23 +317,6 @@ namespace Nutrilife.DataAccessLayer.Migrations
                     b.ToTable("FeedBacks");
                 });
 
-            modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.HealthReaources", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
-
-                    b.Property<string>("name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("id");
-
-                    b.ToTable("healthReaources");
-                });
-
             modelBuilder.Entity("Nutrilife.DataAccessLayer.Models.MealLog", b =>
                 {
                     b.Property<Guid>("id")

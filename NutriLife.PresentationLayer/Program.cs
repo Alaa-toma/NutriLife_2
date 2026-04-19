@@ -34,7 +34,7 @@ namespace NutriLife.PresentationLayer
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             {
-                options.UseSqlServer("Server=db44885.public.databaseasp.net;Database=db44885;User Id=db44885;Password=8Wj+Td@93Rf?;Encrypt=True;TrustServerCertificate=True;MultipleActiveResultSets=True;");
+                options.UseSqlServer("Server=db48530.public.databaseasp.net; Database=db48530; User Id=db48530; Password=Nd4?b3%X_Q5y; Encrypt=True; TrustServerCertificate=True; MultipleActiveResultSets=True;");
             });
 
             var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
