@@ -32,13 +32,13 @@ namespace Nutrilife.LogicLayer.Mapping
             TypeAdapterConfig<MealPlan, MealPlanResponse>.NewConfig()
               .Map(dest => dest.MealPlanId, source => source.Id); 
 
-            TypeAdapterConfig<MealPlan, MealPlanSummaryResponse>.NewConfig()
-              .Map(dest => dest.MealPlanId, source => source.Id);
-
-
             TypeAdapterConfig<ScheduledMeal, ScheduledMealResponse>.NewConfig()
-              .Map(dest => dest.ScheduledMealId , source => source.Id);
+            .Map(dest => dest.ScheduledMealId, source => source.Id);
 
+
+            TypeAdapterConfig<MealPlan, MealPlanSummaryResponse>.NewConfig()
+              .Map(dest => dest.totalDays, source => source.Days.Count)
+               .Map(dest => dest.MealPlanId, source => source.Id);
 
         }
     }

@@ -61,11 +61,11 @@ namespace NutriLife.PresentationLayer.Controllers
         // -------------------------------------------------------
 
 
-        [HttpPatch("meals/{scheduledMealId}")]
+        [HttpPut("Updatemeal")]
         [Authorize(Roles = "Nutritionist")]
-        public async Task<IActionResult> UpdateMeal(Guid scheduledMealId, [FromBody] UpdateScheduledMealRequest request)
+        public async Task<IActionResult> UpdateMeal( [FromBody] UpdateScheduledMealRequest request)
         {
-            var result = await _mealPlanService.UpdateMealAsync(scheduledMealId, request);
+            var result = await _mealPlanService.UpdateMealAsync(request);
             if (result is null) return NotFound("Meal not found.");
             return Ok(result);
         }
@@ -81,17 +81,19 @@ namespace NutriLife.PresentationLayer.Controllers
             return NoContent();
         }
 
+        //--------------------------------------
+
         [HttpDelete("Deleteday/{planOfDayId}")]
         [Authorize(Roles = "Nutritionist")]
         public async Task<IActionResult> DeleteDay(Guid planOfDayId)
         {
             var success = await _mealPlanService.DeleteDayAsync(planOfDayId);
-            if (!success) return NotFound("Day not found.");
-            return NoContent();
+            if (!success) return NotFound("Day not found...");
+            return Ok();
         }
 
 
-        [HttpPatch("{planId}/activate")]
+        [HttpPut("activate/{planId}")]
         [Authorize(Roles = "Nutritionist")]
         public async Task<IActionResult> ActivatePlan(Guid planId)
         {
@@ -101,7 +103,7 @@ namespace NutriLife.PresentationLayer.Controllers
         }
 
 
-        [HttpGet("nutritionist")]
+        [HttpGet("nutritionistPlans")]
         [Authorize(Roles = "Nutritionist")]
         public async Task<IActionResult> GetMyPlansAsNutritionist()
         {
@@ -109,8 +111,9 @@ namespace NutriLife.PresentationLayer.Controllers
             return Ok(result);
         }
 
+        // -----------------------------------
 
-        [HttpGet("{planId}")]
+        [HttpGet("getplan/{planId}")]
         [Authorize]
         public async Task<IActionResult> GetPlanById(Guid planId)
         {
@@ -121,7 +124,7 @@ namespace NutriLife.PresentationLayer.Controllers
 
 
 
-        [HttpGet("clientmeals/{clientID}")]
+        [HttpGet("clientPlansS/{clientID}")]
         [Authorize]
         public async Task<IActionResult> GetMyPlansAsClient(string clientID)
         {
@@ -131,7 +134,7 @@ namespace NutriLife.PresentationLayer.Controllers
         }
 
 
-        [HttpGet("Myclientmeals/{clientID}")]
+        [HttpGet("MyclientPlansS/{clientID}")]
         [Authorize(Roles = "Nutritionist")]
         public async Task<IActionResult> GetClientPlansByNutriAsync(string clientID)
         {
@@ -150,13 +153,7 @@ namespace NutriLife.PresentationLayer.Controllers
             return Ok(result);
         }
 
-        [HttpPost("meals/extra")]
-        [Authorize(Roles = "Client")]
-        public async Task<IActionResult> LogExtraMeal([FromBody] LogExtraMealRequest request)
-        {
-            var result = await _mealPlanService.LogExtraMealAsync(request);
-            return Ok(result);
-        }
+       
 
 
 

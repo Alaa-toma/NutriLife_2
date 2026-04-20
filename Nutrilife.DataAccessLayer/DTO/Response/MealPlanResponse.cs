@@ -16,7 +16,7 @@ namespace Nutrilife.DataAccessLayer.DTO.Response
         public string title { get; set; } // title of plan
         public DateOnly StartDate { get; set; }
         public PlanStatus status { get; set; } //
-        public ICollection<PlanOfDay> Days { get; set; }
+        public ICollection<DayResponse> Days { get; set; }
     }
 
     public record MealLogResponse
@@ -35,7 +35,6 @@ namespace Nutrilife.DataAccessLayer.DTO.Response
         public DateOnly StartDate { get; set; }
         public PlanStatus status { get; set; }
         public int totalDays { get; set; }  
-        public int totalMeals { get; set; }
     }
 
     // Response for a single day 

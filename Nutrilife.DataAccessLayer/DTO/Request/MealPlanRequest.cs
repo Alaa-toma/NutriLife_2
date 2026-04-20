@@ -67,6 +67,7 @@ namespace Nutrilife.DataAccessLayer.DTO.Request
     {
         
         public Guid ScheduledMealId { get; set; }
+        public Guid PlanOfDayId { get; set; }
         public string clientId { get; set; }
         public LogStatus status { get; set; }
         public string? CustomMealName { get; set; } // لو اكل وجبة بديلة

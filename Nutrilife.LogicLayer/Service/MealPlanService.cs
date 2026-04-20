@@ -84,9 +84,10 @@ namespace Nutrilife.LogicLayer.Service
             return created.Adapt<ScheduledMealResponse>();
         }
 
-        public async Task<ScheduledMealResponse?> UpdateMealAsync(Guid scheduledMealId, UpdateScheduledMealRequest request)
+        public async Task<ScheduledMealResponse?> UpdateMealAsync( UpdateScheduledMealRequest request)
         {
-            var meal = await _scheduledMeal.GetOne(a=> a.Id == scheduledMealId);
+            var meal = await _scheduledMeal.GetOne(a=> a.Id == request.ScheduledMealId);
+            request.Adapt(meal);
             var updated = await _scheduledMeal.UpdateAsync(meal);
             if(updated == null) { throw new Exception("Update Failed!"); }
             return updated.Adapt<ScheduledMealResponse?>();
@@ -94,15 +95,15 @@ namespace Nutrilife.LogicLayer.Service
 
         public async Task<bool> DeleteMealAsync(Guid scheduledMealId)
         {
-            var meal = await _scheduledMeal.GetOne(a => a.Id == scheduledMealId);
+            var meal = await _scheduledMeal.GetOne(m => m.Id == scheduledMealId);
             if(meal == null)
             {
                 throw new Exception("Meal Not Found!");
             }
              var deleted = await _scheduledMeal.deleteAsync(meal);
 
-            if(deleted) { return false; }
-            return true;
+            
+            return deleted;
         }
 
         public async Task<bool> DeleteDayAsync(Guid planOfDayId)
@@ -114,8 +115,7 @@ namespace Nutrilife.LogicLayer.Service
                 throw new Exception("Day Not Found!");
             }
             var deleted = await _PlanOfDayRepository.deleteAsync(day);
-            if (deleted) { return false; }
-            return true;
+            return deleted;
         }
 
 
@@ -142,10 +142,12 @@ namespace Nutrilife.LogicLayer.Service
         {
 
             var plans = await _mealPlanRepository.GetPlansByClientAsync(clientId);
+            
             if (plans == null)
             {
                 throw new Exception("No Plans Exist for this client..!");
             }
+            
             return plans.Adapt<IEnumerable < MealPlanSummaryResponse >> ();
         }
 
@@ -182,18 +184,10 @@ namespace Nutrilife.LogicLayer.Service
         }
 
 
-        public async Task<MealLogResponse> LogExtraMealAsync(LogExtraMealRequest request) // وجبة اضافية, 
-        {
-            var Extra = request.Adapt<MealLog>();
-            var created = await _mealLogRepository.CreateAsync(Extra);
-            return created.Adapt<MealLogResponse>();
-        }
-
-
-
+       
         public async Task<MealLogResponse> LogMealAsync(LogMealRequest request)
         {
-            var existiong = await _mealLogRepository.GetOne(a => a.ScheduledMealId == request.ScheduledMealId); // تم اضافة ؤد على هذا اليوم؟
+            var existiong = await _mealLogRepository.GetOne(a => a.ScheduledMealId == request.ScheduledMealId); // تم اضافة  رد على هذا اليوم؟
             if (existiong != null)
             {
                 existiong.Adapt(request); // edit status, meal....>

@@ -15,7 +15,7 @@ namespace Nutrilife.LogicLayer.Service
         Task<MealPlanResponse> CreatePlanAsync( MealPlanRequest request);
         Task<DayResponse> AddDayAsync(AddPlanDayRequest request);
         Task<ScheduledMealResponse> AddMealAsync(AddScheduledMealRequest request);
-        Task<ScheduledMealResponse?> UpdateMealAsync(Guid scheduledMealId, UpdateScheduledMealRequest request);
+        Task<ScheduledMealResponse?> UpdateMealAsync( UpdateScheduledMealRequest request);
         Task<bool> DeleteMealAsync(Guid scheduledMealId);
         Task<bool> DeleteDayAsync(Guid planOfDayId);
         Task<bool> ActivatePlanAsync(Guid planId);
@@ -28,7 +28,6 @@ namespace Nutrilife.LogicLayer.Service
 
         // ── Client ────────────────────────────────────────────────────────────────
         Task<MealLogResponse> LogMealAsync(LogMealRequest request);
-        Task<MealLogResponse> LogExtraMealAsync(LogExtraMealRequest request);
 
 
     }
