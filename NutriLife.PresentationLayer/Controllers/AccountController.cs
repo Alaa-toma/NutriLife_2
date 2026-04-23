@@ -82,6 +82,17 @@ namespace NutriLife.PresentationLayer.Controllers
             return Ok(result);
         }
 
+
+        [HttpPut("ChangePass")]
+        [Authorize]
+        public async Task<IActionResult> ChangePassword(ChangePasswordRequest  request)
+        {
+            var result = await _authenticationService.ChangePassword(request);
+            if (result== null) { return BadRequest(result); }
+
+            return Ok(result);
+        }
+
         [HttpPost("ResetPassword")]
         public async Task<IActionResult> NewPassword(NewPasswordRequest request)
         {

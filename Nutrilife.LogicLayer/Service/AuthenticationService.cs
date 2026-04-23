@@ -43,6 +43,7 @@ namespace Nutrilife.LogicLayer.Service
         }  
 
 
+        // client rigester
          public async Task<RegisterResponse> RegisterAsync(ClientRequest request)
         {
             var user = request.Adapt<Client>();
@@ -306,6 +307,37 @@ namespace Nutrilife.LogicLayer.Service
                 };
         }
 
+
+
+        public async Task<MessageResponse> ChangePassword(ChangePasswordRequest request)
+        {
+            if (string.IsNullOrWhiteSpace(request.Email) ||
+                     string.IsNullOrWhiteSpace(request.OldPassword) ||
+                     string.IsNullOrWhiteSpace(request.NewPassword))
+            {
+                return new MessageResponse { success = false, message = "All fields are required." };
+            }
+
+            var user = await _UserManager.FindByEmailAsync(request.Email);
+            if (user == null)
+            {
+                return new MessageResponse() {success=false, message="User Not Found..!" };
+            }
+
+
+            //checks old password AND hashes new one automatically
+            var result = await _UserManager.ChangePasswordAsync(user,request.OldPassword, request.NewPassword);
+
+            if (!result.Succeeded)
+            {
+                var errors = string.Join("ERR: , ", result.Errors.Select(e => e.Description));
+                return new MessageResponse { success = false, message = errors };
+            }
+
+            return new MessageResponse() { success = true, message = "Changed Successfully.." };
+
+        }
+
         public async Task<List<ClientResponse>> GetAllClientsInNutrilife()
         {
             var clients = await _dbContext.Users.OfType<Client>().ToListAsync();
@@ -318,7 +350,7 @@ namespace Nutrilife.LogicLayer.Service
 
             return Nutri.Adapt<List<NutritionistResponse>>();
         }
-
+           
 
         public async Task<DeleteAccountResponse> DeleteAccountAsync(DeleteAccountRequest request)
         {
@@ -365,6 +397,8 @@ namespace Nutrilife.LogicLayer.Service
 
             return new DeleteAccountResponse { Success = true, Message = "Account deleted successfully." };
         }
+
+        
 
         private string GetCurrentUserId()
         {

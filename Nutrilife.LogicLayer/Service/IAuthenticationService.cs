@@ -19,6 +19,8 @@ namespace Nutrilife.LogicLayer.Service
         Task<bool> ResendConfirmationEmailAsync(string email);
         Task<ResetPasswordResponse> resetPasswordAsync(ResendConfirmationEmailDTO request);
         Task<ResetPasswordResponse> NewPasswordAsync(NewPasswordRequest request);
+        Task<MessageResponse> ChangePassword(ChangePasswordRequest request);
+
 
         Task<List<ClientResponse>> GetAllClientsInNutrilife();
          Task<List<NutritionistResponse>> GetAllNutritionistInNutrilife();
