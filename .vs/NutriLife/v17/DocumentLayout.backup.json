@@ -7,38 +7,178 @@
       "RelativeMoniker": "D:0:0:{12032744-4C59-4B2C-BC87-6842B0F87201}|NutriLife.PresentationLayer\\NutriLife.PresentationLayer.csproj|solutionrelative:nutrilife.presentationlayer\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\dto\\response\\clientresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\dto\\response\\clientresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\dto\\response\\nutritionistresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\dto\\response\\nutritionistresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.logiclayer\\service\\iauthenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|solutionrelative:nutrilife.logiclayer\\service\\iauthenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\dto\\request\\changepasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\dto\\request\\changepasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.logiclayer\\service\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|solutionrelative:nutrilife.logiclayer\\service\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\repository\\nutritionistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\repository\\nutritionistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\repository\\inutritionistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\repository\\inutritionistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\repository\\clientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\repository\\clientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\repository\\iclientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\repository\\iclientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.dataaccesslayer\\dto\\request\\updatenutrirequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0884C41-F642-4D45-A20B-E963AC09AD28}|Nutrilife.DataAccessLayer\\Nutrilife.DataAccessLayer.csproj|solutionrelative:nutrilife.dataaccesslayer\\dto\\request\\updatenutrirequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12032744-4C59-4B2C-BC87-6842B0F87201}|NutriLife.PresentationLayer\\NutriLife.PresentationLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.presentationlayer\\controllers\\nutritionistplanscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12032744-4C59-4B2C-BC87-6842B0F87201}|NutriLife.PresentationLayer\\NutriLife.PresentationLayer.csproj|solutionrelative:nutrilife.presentationlayer\\controllers\\nutritionistplanscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.logiclayer\\service\\nutritionistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|solutionrelative:nutrilife.logiclayer\\service\\nutritionistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|c:\\users\\dell\\onedrive\\desktop\\nutrilife\\nutrilife.logiclayer\\service\\inutritionistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EE3892B-9FDD-4B0A-874F-5640F916FE22}|Nutrilife.LogicLayer\\Nutrilife.LogicLayer.csproj|solutionrelative:nutrilife.logiclayer\\service\\inutritionistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "DockedHeight": 228,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "NutritionistResponse.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\DTO\\Response\\NutritionistResponse.cs",
+              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\DTO\\Response\\NutritionistResponse.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\DTO\\Response\\NutritionistResponse.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\DTO\\Response\\NutritionistResponse.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T22:04:51.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "INutritionistRepository.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\INutritionistRepository.cs",
+              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\Repository\\INutritionistRepository.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\INutritionistRepository.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\Repository\\INutritionistRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T22:01:54.642Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NutritionistRepository.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\NutritionistRepository.cs",
+              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\Repository\\NutritionistRepository.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\NutritionistRepository.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\Repository\\NutritionistRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T22:01:28.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IClientRepository.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\IClientRepository.cs",
+              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\Repository\\IClientRepository.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\IClientRepository.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\Repository\\IClientRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T21:53:40.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ClientRepository.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\ClientRepository.cs",
+              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\Repository\\ClientRepository.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\Repository\\ClientRepository.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\Repository\\ClientRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T21:53:22.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UpdateNutriRequest.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\DTO\\Request\\UpdateNutriRequest.cs",
+              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\DTO\\Request\\UpdateNutriRequest.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\DTO\\Request\\UpdateNutriRequest.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\DTO\\Request\\UpdateNutriRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T21:42:17.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "IAuthenticationService.cs",
               "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\IAuthenticationService.cs",
               "RelativeDocumentMoniker": "Nutrilife.LogicLayer\\Service\\IAuthenticationService.cs",
               "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\IAuthenticationService.cs",
               "RelativeToolTip": "Nutrilife.LogicLayer\\Service\\IAuthenticationService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA1wB0AAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T09:28:21.78Z",
+              "WhenOpened": "2026-04-24T21:19:38.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthenticationService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\AuthenticationService.cs",
+              "RelativeDocumentMoniker": "Nutrilife.LogicLayer\\Service\\AuthenticationService.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\AuthenticationService.cs",
+              "RelativeToolTip": "Nutrilife.LogicLayer\\Service\\AuthenticationService.cs",
+              "ViewState": "AgIAAF8BAAAAAAAAAAAqwJ8BAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T21:17:35.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClientResponse.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\DTO\\Response\\ClientResponse.cs",
+              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\DTO\\Response\\ClientResponse.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\DTO\\Response\\ClientResponse.cs",
+              "RelativeToolTip": "Nutrilife.DataAccessLayer\\DTO\\Response\\ClientResponse.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA0wBEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T21:15:56.802Z",
               "EditorCaption": ""
             },
             {
@@ -49,40 +189,63 @@
               "RelativeDocumentMoniker": "NutriLife.PresentationLayer\\Controllers\\AccountController.cs",
               "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\NutriLife.PresentationLayer\\Controllers\\AccountController.cs",
               "RelativeToolTip": "NutriLife.PresentationLayer\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAFcAAABNAAAAAAAAAA==",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAAwwMwAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T09:24:43.746Z",
+              "WhenOpened": "2026-04-24T21:15:37.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "NutritionistPlansController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\NutriLife.PresentationLayer\\Controllers\\NutritionistPlansController.cs",
+              "RelativeDocumentMoniker": "NutriLife.PresentationLayer\\Controllers\\NutritionistPlansController.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\NutriLife.PresentationLayer\\Controllers\\NutritionistPlansController.cs",
+              "RelativeToolTip": "NutriLife.PresentationLayer\\Controllers\\NutritionistPlansController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBEAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T21:10:52.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "INutritionistService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\INutritionistService.cs",
+              "RelativeDocumentMoniker": "Nutrilife.LogicLayer\\Service\\INutritionistService.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\INutritionistService.cs",
+              "RelativeToolTip": "Nutrilife.LogicLayer\\Service\\INutritionistService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T21:10:29.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "NutritionistService.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\NutritionistService.cs",
+              "RelativeDocumentMoniker": "Nutrilife.LogicLayer\\Service\\NutritionistService.cs",
+              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\NutritionistService.cs",
+              "RelativeToolTip": "Nutrilife.LogicLayer\\Service\\NutritionistService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwBQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T21:07:25.968Z",
               "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
+            }
+          ]
+        },
+        {
+          "DockedHeight": 160,
+          "SelectedChildIndex": -1,
+          "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ChangePasswordRequest.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\DTO\\Request\\ChangePasswordRequest.cs",
-              "RelativeDocumentMoniker": "Nutrilife.DataAccessLayer\\DTO\\Request\\ChangePasswordRequest.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.DataAccessLayer\\DTO\\Request\\ChangePasswordRequest.cs",
-              "RelativeToolTip": "Nutrilife.DataAccessLayer\\DTO\\Request\\ChangePasswordRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAwAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-23T08:54:31.55Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AuthenticationService.cs",
-              "DocumentMoniker": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\AuthenticationService.cs",
-              "RelativeDocumentMoniker": "Nutrilife.LogicLayer\\Service\\AuthenticationService.cs",
-              "ToolTip": "C:\\Users\\DELL\\OneDrive\\Desktop\\NutriLife\\Nutrilife.LogicLayer\\Service\\AuthenticationService.cs",
-              "RelativeToolTip": "Nutrilife.LogicLayer\\Service\\AuthenticationService.cs",
-              "ViewState": "AgIAANwAAAAAAAAAAAAwwDcBAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-21T20:15:40.722Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }

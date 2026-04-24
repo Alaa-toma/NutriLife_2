@@ -79,5 +79,16 @@ namespace NutriLife.PresentationLayer.Controllers
             return Ok(result);
         }
 
+        [HttpGet("GetNutri/{NutriID}")]
+        public async Task<IActionResult> GetNutri(string NutriID)
+        {
+            var result = await _nutritionistService.GeyNutritionist(NutriID);
+            if (result == null)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
+        }
+
     }
 }

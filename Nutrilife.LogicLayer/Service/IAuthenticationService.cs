@@ -25,6 +25,10 @@ namespace Nutrilife.LogicLayer.Service
         Task<List<ClientResponse>> GetAllClientsInNutrilife();
          Task<List<NutritionistResponse>> GetAllNutritionistInNutrilife();
         Task<DeleteAccountResponse> DeleteAccountAsync(DeleteAccountRequest request);
+        Task<ClientResponse> GetClient(string clientId);
+
+        Task<NutritionistResponse> UpdateNutriAccount(string NutriId, UpdateNutriRequest request);
+        Task<ClientResponse> UpdateClientAccount(string clientID, UpdateClientRequest request);
 
 
         Task<ProfileImageResponse> AddProfileImgAsync(UploadProfileImageRequest request);

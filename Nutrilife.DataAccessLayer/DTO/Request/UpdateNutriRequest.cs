@@ -1,26 +1,24 @@
-﻿using Nutrilife.DataAccessLayer.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nutrilife.DataAccessLayer.DTO.Response
+namespace Nutrilife.DataAccessLayer.DTO.Request
 {
-    public class NutritionistResponse
+    public class UpdateNutriRequest
     {
-        public string Id { get; set; }
-        public string UserName { get; set; } = null!;
-        public string FullName { get; set; } = null!;
-        public string Email { get; set; } = null!;
+        public string UserName { get; set; }
+        public string FullName { get; set; }
+        public string? Gender { get; set; }
+        public DateOnly DOF { get; set; }
         public string? PhoneNumber { get; set; }
-
         public string Specialization { get; set; }
         public int YearsOfExperience { get; set; }
         public string Bio { get; set; }
         public string? Location { get; set; }
         public List<string> Languages { get; set; }
-        public string OppeningTime { get; set; }
+        public string WorkingTime { get; set; }
         public List<string?> Certifications { get; set; }
         public List<string?> ExpertIn { get; set; }
     }

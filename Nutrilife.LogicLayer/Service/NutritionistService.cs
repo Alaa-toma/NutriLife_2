@@ -87,5 +87,17 @@ namespace Nutrilife.LogicLayer.Service
             return plan.Adapt<NutritionistPlansResponse>();
         }
 
+
+        public async Task<NutritionistResponse> GeyNutritionist(string NutriId)
+        {
+            var nutri = await _nutritionistRepository.GetByIdAsync(NutriId);
+            if(nutri == null)
+            {
+                throw new Exception("Nutritionist Not Found..!");
+            }
+
+            return nutri.Adapt<NutritionistResponse>();
+        }
+
     }
 }

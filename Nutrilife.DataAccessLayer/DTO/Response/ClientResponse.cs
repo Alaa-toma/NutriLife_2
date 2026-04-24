@@ -14,8 +14,9 @@ namespace Nutrilife.DataAccessLayer.DTO.Response
         public string Email { get; set; } = null!;
         public string? Gender { get; set; }
         public DateOnly DOF { get; set; }
+        public float? Height { get; set; }
+        public float? Weight { get; set; }
         public string? PhoneNumber { get; set; }
-        public float Height { get; set; }
         public string? Disease { get; set; }
         public string? Goal { get; set; }
     }

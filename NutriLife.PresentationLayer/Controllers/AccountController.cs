@@ -126,6 +126,7 @@ namespace NutriLife.PresentationLayer.Controllers
         }
 
         [HttpDelete("deleteAccount")]
+        [Authorize]
         public async Task<IActionResult> DeleteAccount(DeleteAccountRequest request)
         {
             var result = await _authenticationService.DeleteAccountAsync(request);
@@ -186,6 +187,42 @@ namespace NutriLife.PresentationLayer.Controllers
                 return NotFound(new { message = ex.Message });
             }
 
+        }
+
+        [HttpGet("GetClient/{ClientId}")]
+        public async Task<IActionResult> GetClient(string clientId)
+        {
+            var result = await _authenticationService.GetClient(clientId);
+            if (result == null)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
+        }
+
+
+        [HttpPut("editClient/{clientId}")]
+        [Authorize]
+        public async Task<IActionResult> UpdateClientAccont(string clientId, UpdateClientRequest request)
+        {
+            var result = await _authenticationService.UpdateClientAccount(clientId, request);
+            if(result == null)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
+        }
+
+        [HttpPut("editNutri/{NutriID}")]
+        [Authorize]
+        public async Task<IActionResult> UpdateNutriAccont(string NutriID, UpdateNutriRequest request)
+        {
+            var result = await _authenticationService.UpdateNutriAccount(NutriID, request);
+            if (result == null)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
         }
     }
 }

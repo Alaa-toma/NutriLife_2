@@ -12,6 +12,7 @@ using Nutrilife.DataAccessLayer.Data;
 using Nutrilife.DataAccessLayer.DTO.Request;
 using Nutrilife.DataAccessLayer.DTO.Response;
 using Nutrilife.DataAccessLayer.Models;
+using Nutrilife.DataAccessLayer.Repository;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -28,23 +29,27 @@ namespace Nutrilife.LogicLayer.Service
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly ApplicationDbContext _dbContext;
         private readonly IFileService _fileService;
+        private readonly IClientRepository _clientRepository;
+        private readonly INutritionistRepository _nutritionistRepository;
 
         public AuthenticationService(UserManager<ApplicationUser> UserManager,
             IEmailSender emailSender,
             IConfiguration configuration, IHttpContextAccessor httpContextAccessor, 
-            ApplicationDbContext dbContext, IFileService fileService) 
+            ApplicationDbContext dbContext, IFileService fileService, 
+            IClientRepository clientRepository, INutritionistRepository nutritionistRepository) 
         {
             _UserManager = UserManager;
             _EmailSender = emailSender;
             _configuration = configuration;
             _httpContextAccessor = httpContextAccessor;
             _dbContext = dbContext;
-            _fileService = fileService;
-        }  
+            _fileService = fileService; _clientRepository = clientRepository;
+            _nutritionistRepository = nutritionistRepository;
+        }
 
 
-        // client rigester
-         public async Task<RegisterResponse> RegisterAsync(ClientRequest request)
+        // client rigester 
+        public async Task<RegisterResponse> RegisterAsync(ClientRequest request)
         {
             var user = request.Adapt<Client>();
             var result = await _UserManager.CreateAsync(user, request.Password);
@@ -398,7 +403,52 @@ namespace Nutrilife.LogicLayer.Service
             return new DeleteAccountResponse { Success = true, Message = "Account deleted successfully." };
         }
 
-        
+        public async Task<ClientResponse> GetClient(string clientId)
+        {
+            var client = await _UserManager.FindByIdAsync(clientId);
+            if(client == null)
+            {
+                throw new Exception("Client Not Found..!");
+            }
+            return client.Adapt<ClientResponse>();
+        }
+
+        public async Task<NutritionistResponse> UpdateNutriAccount(string NutriId, UpdateNutriRequest request)
+        {
+            var exist = await _nutritionistRepository.GetByIdAsync(NutriId);
+            if (exist == null)
+            {
+                throw new Exception(message: "Nutritionist Not Found");
+            }
+            request.Adapt(exist);
+
+            var result = await _nutritionistRepository.UpdateAsync(exist);
+            if (result == null)
+            {
+                throw new Exception("Failed to update client");
+            }
+
+            return result.Adapt<NutritionistResponse>();
+        }
+
+        public async Task<ClientResponse> UpdateClientAccount(string clientID, UpdateClientRequest request)
+        {
+            var exist = await _clientRepository.GetOne(c=> c.Id == clientID);
+            if (exist == null)
+            {
+                throw new Exception(message: "client Not Found");
+            }
+            request.Adapt(exist);
+           
+            var result = await _clientRepository.UpdateAsync(exist);
+            if (result == null)
+            {
+                throw new Exception("Failed to update client");
+            }
+
+            return exist.Adapt<ClientResponse>();
+        }
+
 
         private string GetCurrentUserId()
         {
@@ -476,5 +526,8 @@ namespace Nutrilife.LogicLayer.Service
 
             return $"{baseUrl}/images/profiles/{fileName}";
         }
+
+
+
     }
 }

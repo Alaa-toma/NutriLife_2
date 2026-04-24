@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace Nutrilife.DataAccessLayer.Repository
 {
-    public class NutritionistRepository : INutritionistRepository
+    public class NutritionistRepository : GenericRepository<Nutritionist>, INutritionistRepository
     {
         private readonly ApplicationDbContext _context;
 
-        public NutritionistRepository(ApplicationDbContext context)
-        {
+        public NutritionistRepository(ApplicationDbContext context):base(context) {
+        
             _context = context;
         }
 

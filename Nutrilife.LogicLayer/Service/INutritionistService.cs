@@ -17,6 +17,7 @@ namespace Nutrilife.LogicLayer.Service
         Task<MessageResponse> DeletePlanAsync(int id);
          Task<List<NutritionistPlansResponse>> MyPlans(string NutriId);
         Task<NutritionistPlansResponse> getOne(int planID);
+         Task<NutritionistResponse> GeyNutritionist(string NutriId);
 
     }
 }
