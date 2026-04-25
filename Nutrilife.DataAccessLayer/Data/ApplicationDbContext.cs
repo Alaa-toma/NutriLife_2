@@ -27,6 +27,9 @@ namespace Nutrilife.DataAccessLayer.Data
         public DbSet<PlanOfDay> planOfDays { get; set; }
         public DbSet<ScheduledMeal> scheduledMeals { get; set; }
         public DbSet<MealLog> mealLogs { get; set; }
+        public DbSet<HealthTracking> healthTrackings { get; set; }
+        public DbSet<InBodyScan> inBodyScans { get; set; }
+        public DbSet<ManualMeasurement> manualMeasurements { get; set; }
 
 
 
@@ -157,6 +160,23 @@ namespace Nutrilife.DataAccessLayer.Data
                  .IsRequired(false)
                  .OnDelete(DeleteBehavior.NoAction);
             });
+
+
+            builder.Entity<HealthTracking>()
+            .HasOne(s => s.subscription)
+            .WithMany()
+            .HasForeignKey(s => s.SubscriptioId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<HealthTracking>()
+                .HasOne(s => s.client)
+                .WithMany()
+                .HasForeignKey(s => s.ClientId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<HealthTracking>()
+                .HasQueryFilter(h => !h.client.IsDeleted);
+
         }
 
 
